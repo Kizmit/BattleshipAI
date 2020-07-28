@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Pieces
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: GridBoard
+    uniqueID: 1020142013
+    locked: 0
+  - name: Pieces
+    uniqueID: 1025287979
     locked: 0
