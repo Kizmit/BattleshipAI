@@ -133,15 +133,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridRed
       objectReference: {fileID: 0}
+    - target: {fileID: 2816464219829507652, guid: fec7965f894cca64ea292ec8569897c9,
+        type: 3}
+      propertyPath: m_CellSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816464219829507652, guid: fec7965f894cca64ea292ec8569897c9,
+        type: 3}
+      propertyPath: m_CellSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4620922345422980941, guid: fec7965f894cca64ea292ec8569897c9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -512
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620922345422980941, guid: fec7965f894cca64ea292ec8569897c9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -384
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620922345422980941, guid: fec7965f894cca64ea292ec8569897c9,
         type: 3}
@@ -211,12 +221,12 @@ PrefabInstance:
     - target: {fileID: 2127726324230517489, guid: 7bbf9268c7395ff488f3df33de1125ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -525.02563
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2127726324230517489, guid: 7bbf9268c7395ff488f3df33de1125ba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -384.94345
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2127726324230517489, guid: 7bbf9268c7395ff488f3df33de1125ba,
         type: 3}
@@ -3895,6 +3905,26 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 2127726324990910156, guid: 7bbf9268c7395ff488f3df33de1125ba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -205.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127726324990910156, guid: 7bbf9268c7395ff488f3df33de1125ba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 151.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127726324990910156, guid: 7bbf9268c7395ff488f3df33de1125ba,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 37.885136
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127726324990910156, guid: 7bbf9268c7395ff488f3df33de1125ba,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 33.983543
+      objectReference: {fileID: 0}
     - target: {fileID: 2127726324990910157, guid: 7bbf9268c7395ff488f3df33de1125ba,
         type: 3}
       propertyPath: m_Name
@@ -4026,7 +4056,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -4106,7 +4136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -4125,8 +4155,8 @@ Canvas:
   m_GameObject: {fileID: 1756022316}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1658505560}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
