@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    //private bool orthographic = true;
+    private bool orthographic = true;
 
-    //public float orthographicSize = 
+    public float orthographicSize = 30;
 
     // Start is called before the first frame update
     void Start()
