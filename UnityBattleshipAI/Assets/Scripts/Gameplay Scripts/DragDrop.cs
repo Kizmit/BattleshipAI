@@ -4,41 +4,33 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour {
-    // The plane the object is currently being dragged on
-    private Plane dragPlane;
+  private bool isDragging;
 
-    // The difference between where the mouse is on the drag plane and
-    // where the origin of the object is on the drag plane
-    private Vector3 offset;
+  private void OnMouseDown()
+  {
+    isDragging = true;
 
-    private Camera myMainCamera;
+  }
 
-    void Start()
+  private void OnMouseUp()
+  {
+    isDragging = false;
+  }
+
+  private void Update()
+  {
+
+    if (isDragging)
     {
-        myMainCamera = Camera.main; // Camera.main is expensive ; cache it here
+
+      Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+      transform.Translate(mousePosition,Space.World);
+      if (Input.GetMouseButtonDown(1))
+      {
+        transform.Rotate(0,0,90);
+        Debug.Log(mousePosition);
+      }
+
     }
-
-    void OnMouseDown()
-    {
-        dragPlane = new Plane(myMainCamera.transform.forward, transform.position);
-        Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition);
-
-        float planeDist;
-        dragPlane.Raycast(camRay, out planeDist);
-        offset = transform.position - camRay.GetPoint(planeDist);
-    }
-
-    void OnMouseDrag()
-    {
-        Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition);
-
-        float planeDist;
-        dragPlane.Raycast(camRay, out planeDist);
-        transform.position = camRay.GetPoint(planeDist) + offset;
-
-        if(Input.GetMouseButtonDown(1))
-        {
-            transform.Rotate(0,90,0);
-        }
-    }
+  }
 }
