@@ -6,7 +6,7 @@ public class Camera : MonoBehaviour
 {
     private bool orthographic = true;
 
-    public float orthographicSize = 30;
+    public float orthographicSize = 50;
 
     // Start is called before the first frame update
     void Start()
