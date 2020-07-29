@@ -1,29 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour
+public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-  private bool isDragging;
-
-  public void OnMouseDown()
-  {
-    isDragging = true;
-  }
-
-  public void OnMouseUp()
-  {
-    isDragging = false;
-  }
-
-  void Update()
-  {
-    if (isDragging)
+    /*/ Start is called before the first frame update
+    void Start()
     {
-      Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-      transform.Translate(mousePosition);
+        
     }
-  }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }*/
+
+    private RectTransform rectTransform;
+
+    private void Awake()
+    {
+
+        rectTransform = GetComponent<RectTransform>();
+
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+
+        Debug.Log("Start");
+
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+
+        Debug.Log("Dragging");
+        rectTransform.anchoredPosition += eventData.delta;
+
+
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+
+        Debug.Log("Click");
+
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+
+        Debug.Log("Stop");
+
+    }
 }
