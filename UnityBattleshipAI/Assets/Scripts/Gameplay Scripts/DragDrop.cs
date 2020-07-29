@@ -3,56 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
-{
-    /*/ Start is called before the first frame update
+public class DragDrop : MonoBehaviour {
+    // The plane the object is currently being dragged on
+    private Plane dragPlane;
+
+    // The difference between where the mouse is on the drag plane and
+    // where the origin of the object is on the drag plane
+    private Vector3 offset;
+
+    private Camera myMainCamera;
+
     void Start()
     {
-        
+        myMainCamera = Camera.main; // Camera.main is expensive ; cache it here
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMouseDown()
     {
-        
-    }*/
+        dragPlane = new Plane(myMainCamera.transform.forward, transform.position);
+        Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition);
 
-    private RectTransform rectTransform;
-
-    private void Awake()
-    {
-
-        rectTransform = GetComponent<RectTransform>();
-
+        float planeDist;
+        dragPlane.Raycast(camRay, out planeDist);
+        offset = transform.position - camRay.GetPoint(planeDist);
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    void OnMouseDrag()
     {
+        Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition);
 
-        Debug.Log("Start");
+        float planeDist;
+        dragPlane.Raycast(camRay, out planeDist);
+        transform.position = camRay.GetPoint(planeDist) + offset;
 
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-
-        Debug.Log("Dragging");
-        rectTransform.anchoredPosition += eventData.delta;
-
-
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-
-        Debug.Log("Click");
-
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-
-        Debug.Log("Stop");
-
+        if(Input.GetMouseButtonDown(1))
+        {
+            transform.Rotate(0,90,0);
+        }
     }
 }
