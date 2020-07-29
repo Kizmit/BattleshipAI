@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
-using System;
+using TMPro;
+
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public Dropdown resolutionDropdown;
+    public TMP_Dropdown resolutionDropdown;
 
     public Resolution[] resolutions;
 
    void Start()
+    {
+        GetResolution();
+    }
+    public void GetResolution()
     {
         resolutions = Screen.resolutions; //gets all possible resolutions for user
         resolutionDropdown.ClearOptions(); //clears resolutions out of dropdown
@@ -29,6 +33,7 @@ public class SettingsMenu : MonoBehaviour
         }
         resolutionDropdown.AddOptions(resolutionOptions); //populates resolution dropdown with resolution strings
         resolutionDropdown.value = currentResolutionIndex; //sets default resolution
+        SetResolution(currentResolutionIndex);
         resolutionDropdown.RefreshShownValue(); //updates dropdown to start at default resolution
     }
 
