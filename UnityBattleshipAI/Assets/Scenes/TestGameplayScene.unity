@@ -130,7 +130,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 191940, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_Name
-      value: Tile (8)
+      value: Destroyer 2
       objectReference: {fileID: 0}
     - target: {fileID: 191940, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_TagString
@@ -218,7 +218,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 191940, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_Name
-      value: Tile (6)
+      value: Battleship
       objectReference: {fileID: 0}
     - target: {fileID: 191940, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_Layer
@@ -298,7 +298,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 191940, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_Name
-      value: Tile (7)
+      value: Destroyer 1
       objectReference: {fileID: 0}
     - target: {fileID: 191940, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_TagString
@@ -380,7 +380,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 191940, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_Name
-      value: Tile (5)
+      value: Carrier
       objectReference: {fileID: 0}
     - target: {fileID: 406414, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -447,7 +447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871294796}
   m_Layer: 0
-  m_Name: Letters
+  m_Name: Ships
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -482,7 +482,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 191940, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_Name
-      value: Tile (2)
+      value: Sub
       objectReference: {fileID: 0}
     - target: {fileID: 406414, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -609,7 +609,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 191940, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_Name
-      value: Tile (4)
+      value: Cruiser
       objectReference: {fileID: 0}
     - target: {fileID: 406414, guid: 79e0413b186243a45abb5c9ee25f730e, type: 3}
       propertyPath: m_LocalPosition.x
