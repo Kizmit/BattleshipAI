@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Tile : MonoBehaviour
 {
-
     private Vector2 startingPosition;
     private List<Transform> touchingTiles;
     private Transform myParent;
