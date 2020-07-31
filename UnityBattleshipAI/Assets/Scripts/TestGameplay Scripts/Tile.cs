@@ -10,6 +10,7 @@ public class Tile : MonoBehaviour
     private Transform myParent;
     private AudioSource audSource;
 
+    private bool isTouching = false;
     private void Awake()
     {
         startingPosition = transform.position;
@@ -31,6 +32,7 @@ public class Tile : MonoBehaviour
         Vector2 newPosition;
         if (touchingTiles.Count == 0)
         {
+            if (transform.rotation.eulerAngles.z != 0) transform.Rotate(0,0,-90);
             transform.position = startingPosition;
             transform.parent = myParent;
             return;
@@ -55,8 +57,9 @@ public class Tile : MonoBehaviour
             }
             newPosition = currentCell.position;
         }
-        if (currentCell.childCount != 0)
+        if (currentCell.childCount != 0 || isTouching)
         {
+            if (transform.rotation.eulerAngles.z != 0) transform.Rotate(0,0,-90);
             transform.position = startingPosition;
             transform.parent = myParent;
             return;
@@ -69,10 +72,13 @@ public class Tile : MonoBehaviour
         
     }
 
-    
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag != "Cell") return;
+        if (other.tag != "Cell") 
+        {
+            isTouching = true; 
+            return;
+        }
         if (!touchingTiles.Contains(other.transform))
         {
             touchingTiles.Add(other.transform);
@@ -81,7 +87,10 @@ public class Tile : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag != "Cell") return;
+        if (other.tag != "Cell") 
+        {
+            isTouching = false; 
+        }
         if (touchingTiles.Contains(other.transform))
         {
             touchingTiles.Remove(other.transform);

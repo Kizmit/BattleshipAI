@@ -32,6 +32,10 @@ public class InputManager : MonoBehaviour
         if (draggingItem)
         {
             draggedObject.transform.position = inputPosition + touchOffset;
+            if (Input.GetMouseButtonDown(1))
+            {
+                draggedObject.transform.Rotate(0,0,90);
+            }
         }
         else
         {
