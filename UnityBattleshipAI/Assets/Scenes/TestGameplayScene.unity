@@ -2850,6 +2850,7 @@ GameObject:
   - component: {fileID: 1607500597}
   - component: {fileID: 1586697595}
   - component: {fileID: 1602923845}
+  - component: {fileID: 1607822970}
   m_Layer: 8
   m_Name: Cell
   m_TagString: Cell
@@ -2857,6 +2858,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1607822970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607822969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187a6f2e26db658418429e673e00f0ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1607822991
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,6 +3289,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 112158, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
+      propertyPath: m_Name
+      value: P5
+      objectReference: {fileID: 0}
     - target: {fileID: 113080, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
       propertyPath: m_TagString
       value: Cell
@@ -3319,6 +3336,10 @@ PrefabInstance:
     - target: {fileID: 133994, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 133994, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
+      propertyPath: m_Name
+      value: P2
       objectReference: {fileID: 0}
     - target: {fileID: 143858, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
       propertyPath: m_TagString
@@ -3376,6 +3397,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 157818, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
+      propertyPath: m_Name
+      value: P4
+      objectReference: {fileID: 0}
     - target: {fileID: 157836, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
       propertyPath: m_TagString
       value: Cell
@@ -3384,6 +3409,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 157836, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
+      propertyPath: m_Name
+      value: P1
+      objectReference: {fileID: 0}
     - target: {fileID: 159712, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
       propertyPath: m_TagString
       value: Cell
@@ -3391,6 +3420,10 @@ PrefabInstance:
     - target: {fileID: 159712, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 159712, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
+      propertyPath: m_Name
+      value: P11
       objectReference: {fileID: 0}
     - target: {fileID: 169802, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
       propertyPath: m_Layer
@@ -3435,6 +3468,10 @@ PrefabInstance:
     - target: {fileID: 187074, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 187074, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
+      propertyPath: m_Name
+      value: P3
       objectReference: {fileID: 0}
     - target: {fileID: 188690, guid: 61f37656d2de043479db8adb4f9d2dec, type: 3}
       propertyPath: m_Layer
@@ -3842,6 +3879,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 509593381565077261, guid: 61f37656d2de043479db8adb4f9d2dec,
+        type: 3}
+      propertyPath: m_Name
+      value: P8
+      objectReference: {fileID: 0}
     - target: {fileID: 549541390840729860, guid: 61f37656d2de043479db8adb4f9d2dec,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -3981,6 +4023,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069343288539024744, guid: 61f37656d2de043479db8adb4f9d2dec,
+        type: 3}
+      propertyPath: m_Name
+      value: P6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109031600273370485, guid: 61f37656d2de043479db8adb4f9d2dec,
+        type: 3}
+      propertyPath: m_Name
+      value: P10
       objectReference: {fileID: 0}
     - target: {fileID: 2396036858923390028, guid: 61f37656d2de043479db8adb4f9d2dec,
         type: 3}
@@ -4422,6 +4474,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7983463474463363636, guid: 61f37656d2de043479db8adb4f9d2dec,
+        type: 3}
+      propertyPath: m_Name
+      value: P9
+      objectReference: {fileID: 0}
     - target: {fileID: 7997423512326542437, guid: 61f37656d2de043479db8adb4f9d2dec,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -4511,6 +4568,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532266505397955970, guid: 61f37656d2de043479db8adb4f9d2dec,
+        type: 3}
+      propertyPath: m_Name
+      value: P7
       objectReference: {fileID: 0}
     - target: {fileID: 8643848944478737629, guid: 61f37656d2de043479db8adb4f9d2dec,
         type: 3}
@@ -4616,7 +4678,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 20.120592
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4640,7 +4702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038126905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.96, z: -10}
+  m_LocalPosition: {x: 0, y: -5.03, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
