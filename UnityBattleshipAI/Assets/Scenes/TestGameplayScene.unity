@@ -184,6 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1368200550}
   - component: {fileID: 1368200549}
+  - component: {fileID: 1368200551}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -217,6 +218,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1368200551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368200548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b66aa2a082504c8e661fc42f76b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1463638156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 709490083310463686, guid: 51fc7255d02851c4e8eaa0eabc8c318d,
@@ -2870,6 +2883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187a6f2e26db658418429e673e00f0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newSprite: {fileID: 0}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1607822991
 GameObject:
   m_ObjectHideFlags: 0
@@ -6342,7 +6357,7 @@ PrefabInstance:
     - target: {fileID: 1668196049451612692, guid: 9ce2a29cfb34eae49bc13d66200e2241,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1668196049451612692, guid: 9ce2a29cfb34eae49bc13d66200e2241,
         type: 3}
@@ -10132,7 +10147,7 @@ PrefabInstance:
     - target: {fileID: 5748333739333091476, guid: 7c1e99e1e0b7b7040b45cb6091383974,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5748333739333091476, guid: 7c1e99e1e0b7b7040b45cb6091383974,
         type: 3}
@@ -10959,7 +10974,7 @@ PrefabInstance:
     - target: {fileID: 6433767223257343294, guid: 4423bcb88378fef41b921c83ac380418,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6433767223257343294, guid: 4423bcb88378fef41b921c83ac380418,
         type: 3}
@@ -12731,7 +12746,7 @@ PrefabInstance:
     - target: {fileID: 8243114984975642831, guid: 2a2fdb7e727d63947b4dbd07897455ad,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8243114984975642831, guid: 2a2fdb7e727d63947b4dbd07897455ad,
         type: 3}

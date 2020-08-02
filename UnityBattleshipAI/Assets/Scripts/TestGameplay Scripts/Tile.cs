@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Tile : MonoBehaviour
 {
+    public GPTest GPTest;
     private Vector2 startingPosition;
     private List<Transform> touchingTiles;
     private Transform myParent;
@@ -12,6 +13,7 @@ public class Tile : MonoBehaviour
     private bool isTouching = false;
     private void Awake()
     {
+        GPTest = GameObject.Find("GameManager").GetComponent<GPTest>();
         startingPosition = transform.position;
         touchingTiles = new List<Transform>();
         myParent = transform.parent;
@@ -67,6 +69,8 @@ public class Tile : MonoBehaviour
         {
             transform.parent = currentCell;
             StartCoroutine(SlotIntoPlace(transform.position, newPosition));
+            GPTest.shipSet();
+            Debug.Log(GPTest.shipGet());
         }
         
     }
