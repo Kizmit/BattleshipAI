@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private List<Transform> enemyShipCoordinates; //the transforms of randomly chosen cells from enemyGridCells
     private GameObject[] enemyGridCells; //array of all enemy grid cell objects
-    private const int TURN_LIMIT = 1;
+    private const int TURN_LIMIT = 1; //turn limit? not sure if turn control will be implemented here
     
     private void generateShipPositions()
     {
