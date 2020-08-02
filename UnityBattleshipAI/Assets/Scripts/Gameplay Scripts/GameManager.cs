@@ -51,10 +51,15 @@ public class GameManager : MonoBehaviour
         bool vertical = false;
         bool placed = false;
         int startIndex;
-        int count = 0;
+        int count;
         while(!placed)
         {
-            if(RandomNumberGenerator(2) == 1) vertical = true;
+            count = 0;
+            if(RandomNumberGenerator(2) == 1) 
+            {
+               vertical = true; 
+               Debug.Log("Placing Vertical");
+            }
             startIndex = RandomNumberGenerator(GRID_SIZE);
             Debug.Log("Start cell is " + (startIndex + 1));
             if(enemyShipLocations.Contains(enemyGridCells[startIndex])){continue;}
