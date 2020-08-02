@@ -5,20 +5,37 @@ using System.Collections.Generic;
 public class Tile : MonoBehaviour
 {
     private Vector2 startingPosition;
-    private List<Transform> touchingTiles;
-    private Transform myParent;
-    private AudioSource audSource;
+    //private List<Transform> touchingTiles;
+    //private Transform myParent;
+    //private AudioSource audSource;
+    //private bool isTouching = false;
 
-    private bool isTouching = false;
+    [SerializeField]
+    public Sprite newSprite;
+    public SpriteRenderer spriteRenderer;
+
     private void Awake()
     {
+        //The Start() function from attackable
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
         startingPosition = transform.position;
-        touchingTiles = new List<Transform>();
-        myParent = transform.parent;
-        audSource = gameObject.GetComponent<AudioSource>();
+        //touchingTiles = new List<Transform>();
+        //myParent = transform.parent;
+        //audSource = gameObject.GetComponent<AudioSource>();
+
+        //Update from attackable
+        if (Input.GetMouseButtonDown(0))
+            ChangeSprite();
     }
 
-    public void PickUp()
+    public void ChangeSprite()
+    { 
+        spriteRenderer.sprite = newSprite;
+    }
+
+
+    /*public void PickUp()
     {
         transform.localScale = new Vector3(1.1f,1.1f,1.1f);
         gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
@@ -109,4 +126,5 @@ public class Tile : MonoBehaviour
         }
         transform.position = endingPos;
     }
+    */
 }

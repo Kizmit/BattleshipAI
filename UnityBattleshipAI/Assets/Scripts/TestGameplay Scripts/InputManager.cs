@@ -3,21 +3,21 @@ using System.Collections;
 
 public class InputManager : MonoBehaviour
 {
-    private bool draggingItem = false;
-    private GameObject draggedObject;
+    //private bool draggingItem = false;
+    //private GameObject draggedObject;
     private Vector2 touchOffset;
 
     void Update()
     {
         if (HasInput)
         {
-            DragOrPickUp();
+            ColorSwap();
         }
-        else
+        /*else
         {
             if (draggingItem)
                 DropItem();
-        }
+        }*/
     }
     Vector2 CurrentTouchPosition
     {
@@ -26,7 +26,25 @@ public class InputManager : MonoBehaviour
             return Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
     }
-    private void DragOrPickUp()
+
+    private void ColorSwap()
+    {
+        var inputPosition = CurrentTouchPosition;
+
+        var layerMask = 1 << 0;
+        RaycastHit2D[] touches = Physics2D.RaycastAll(inputPosition, inputPosition, 0.5f, layerMask);
+        if (touches.Length > 0)
+        {
+            var hit = touches[0];
+            if (hit.transform != null && hit.transform.tag == "Tile")
+            {
+                hit.transform.GetComponent<Tile>().ChangeSprite();
+            }
+
+        }
+    }
+
+   /* private void DragOrPickUp()
     {
         var inputPosition = CurrentTouchPosition;
         if (draggingItem)
@@ -53,7 +71,7 @@ public class InputManager : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
     private bool HasInput
     {
         get
@@ -62,10 +80,10 @@ public class InputManager : MonoBehaviour
             return Input.GetMouseButton(0);
         }
     }
-    void DropItem()
+    /*void DropItem()
     {
         draggingItem = false;
         draggedObject.transform.localScale = new Vector3(1, 1, 1);
         draggedObject.GetComponent<Tile>().Drop();
-    }
+    }*/
 }

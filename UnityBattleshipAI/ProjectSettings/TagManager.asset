@@ -17,9 +17,9 @@ TagManager:
   - 
   - 
   - Grid
+  - EnemyGrid
   - Pieces
   - OutOfBoundsCollider
-  - 
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: GridBoard
     uniqueID: 1020142013
+    locked: 0
+  - name: Enemy Grid
+    uniqueID: 3702430803
     locked: 0
   - name: Pieces
     uniqueID: 1025287979
