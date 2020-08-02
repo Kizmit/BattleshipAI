@@ -12,13 +12,13 @@ public class GameManager : MonoBehaviour
     private const int TURN_LIMIT = 1; //turn limit? not sure if turn control will be implemented here
     public const int GRID_SIZE = 99; //100-1 for 0 index
     public const int FRIGATE_HOLES = 5;
-    public const int LANDINGCRAFT_HOLES = 1; //used to be seabase
+    public const int LARGE_CARRIER_HOLES = 7; //used to be seabase
     public const int SUB_HOLES = 3;
     public const int CRUISER_HOLES = 3;
     public const int CARRIER_HOLES = 5;
-    public const int TOTAL_SHIP_HOLES = FRIGATE_HOLES + LANDINGCRAFT_HOLES + SUB_HOLES + CRUISER_HOLES + CARRIER_HOLES;
+    public const int TOTAL_SHIP_HOLES = FRIGATE_HOLES + LARGE_CARRIER_HOLES + SUB_HOLES + CRUISER_HOLES + CARRIER_HOLES;
 
-    private int[] shipSizes = new int[]{FRIGATE_HOLES, LANDINGCRAFT_HOLES, SUB_HOLES, CRUISER_HOLES, CARRIER_HOLES};
+    private int[] shipSizes = new int[]{FRIGATE_HOLES, LARGE_CARRIER_HOLES, SUB_HOLES, CRUISER_HOLES, CARRIER_HOLES};
     private List<GameObject> enemyShipLocations; //the transforms of randomly chosen cells from enemyGridCells
     private GameObject[] enemyGridCells; //array of all enemy grid cell objects
 
