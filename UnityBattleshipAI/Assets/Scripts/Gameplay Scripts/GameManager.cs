@@ -47,44 +47,45 @@ public class GameManager : MonoBehaviour
 
     private void PlaceShip(int sizeIndex)
     {
-        GameObject[] openCells = new GameObject[10];
+        GameObject[] openCells = new GameObject[11];
         bool vertical = false;
         bool placed = false;
         int startIndex;
         int count = 0;
-        if(RandomNumberGenerator(2) == 1) vertical = true;
         while(!placed)
         {
+            if(RandomNumberGenerator(2) == 1) vertical = true;
             startIndex = RandomNumberGenerator(GRID_SIZE);
             Debug.Log("Start cell is " + (startIndex + 1));
-            if(enemyShipLocations.Contains(enemyGridCells[startIndex].gameObject)){continue;}
+            if(enemyShipLocations.Contains(enemyGridCells[startIndex])){continue;}
             if(vertical)
             {
                 for(int i = startIndex, j = 0; i < GRID_SIZE; i += 10, j++) //check above start index
                 {
-                    if(enemyShipLocations.Contains(enemyGridCells[i].gameObject))
+                    if(enemyShipLocations.Contains(enemyGridCells[i]))
                     {
                         break;
                     }
                     else
                     {
-                        openCells[j] = enemyGridCells[i].gameObject;
+                        openCells[j] = enemyGridCells[i];
                         count++;
                     }
                 }
                 for(int i = startIndex - 10, j = openCells.Length - (openCells.Length - count); i > 0; i -= 10, j++) //check below start index
                 {
-                    if(enemyShipLocations.Contains(enemyGridCells[i].gameObject))
+                    if(enemyShipLocations.Contains(enemyGridCells[i]))
                     {
                         break;
                     }
                     else
                     {
-                        openCells[j] = enemyGridCells[i].gameObject;
+                        openCells[j] = enemyGridCells[i];
+                        count++;
                     }
                 }
                 
-                if(openCells.Length < shipSizes[sizeIndex]) placed = false; 
+                if(openCells.Length - (openCells.Length - count) < shipSizes[sizeIndex]) placed = false; 
                 else
                 {
                     for(int i = 0; i< shipSizes[sizeIndex]; i++)
@@ -93,39 +94,40 @@ public class GameManager : MonoBehaviour
                     }
                    for(int i = 0; i < shipSizes[sizeIndex]; i++)
                    {
-                       enemyShipLocations.Add(openCells[i].gameObject);
+                       enemyShipLocations.Add(openCells[i]);
                    }
+                   placed = true;
                 }
-                placed = true;
             }
             else
             {
     
                 for(int i = startIndex, j = 0; i > startIndex - ((startIndex % 10)); i--, j++) //check to the left of start
                 {
-                    if(enemyShipLocations.Contains(enemyGridCells[i].gameObject))
+                    if(enemyShipLocations.Contains(enemyGridCells[i]))
                     {
                         break;
                     }
                     else
                     {
-                        openCells[j] = enemyGridCells[i].gameObject;
+                        openCells[j] = enemyGridCells[i];
                         count++;
                     }
                 }
                 for(int i = startIndex + 1, j = openCells.Length  - (openCells.Length - count); i < startIndex + (10 - (startIndex % 10)); i++, j++) //check to the right of start index
                 {
-                    if(enemyShipLocations.Contains(enemyGridCells[i].gameObject))
+                    if(enemyShipLocations.Contains(enemyGridCells[i]))
                     {
                         break;
                     }
                     else
                     {
-                        openCells[j] = enemyGridCells[i].gameObject;
+                        openCells[j] = enemyGridCells[i];
+                        count++;
                     }
                 }
 
-                if(openCells.Length < shipSizes[sizeIndex]) placed = false; 
+                if(openCells.Length - (openCells.Length - count) < shipSizes[sizeIndex]) placed = false; 
                 else
                 {
                     for(int i = 0; i < shipSizes[sizeIndex]; i++)
@@ -134,10 +136,10 @@ public class GameManager : MonoBehaviour
                     }
                     for(int i = 0; i < shipSizes[sizeIndex]; i++)
                     {
-                       enemyShipLocations.Add(openCells[i].gameObject);
+                       enemyShipLocations.Add(openCells[i]);
                     }
+                    placed = true;
                 }
-                placed = true;
             }
         }
     }
