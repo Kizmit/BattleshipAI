@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 //This script manages the enemy AI behavior
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IComparer
 {
     [SerializeField]
     public Sprite newSprite;
@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        enemyGridCells = GameObject.FindGameObjectsWithTag("EnemyCell"); //Puts all of the enemy grid cells into an array
         enemyShipLocations = new List<GameObject>();
+        SetCellArray();
     }
     void Start()
     {
@@ -38,6 +38,21 @@ public class GameManager : MonoBehaviour
     {
     }
     
+    int IComparer.Compare(object x, object y)
+    {
+        return( (new CaseInsensitiveComparer()).Compare(((GameObject)x).name, ((GameObject)y).name));
+    }
+
+    public void SetCellArray()
+    {
+        IComparer myComparer = new GameManager();
+        enemyGridCells = GameObject.FindGameObjectsWithTag("EnemyCell"); //Puts all of the enemy grid cells into an array
+        Array.Sort(enemyGridCells, myComparer);
+        /*foreach (UnityEngine.Object obj in enemyGridCells)
+        {
+            Debug.Log("obj = " + obj.name);
+        }*/
+    }
     private void GenerateShipPositions()
     {
       for(int i = 0; i < shipSizes.Length; i++){
