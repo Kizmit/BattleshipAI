@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     private GameObject[] enemyGridCells; //array of all enemy grid cell objects
     private const int TURN_LIMIT = 1; //turn limit? not sure if turn control will be implemented here
     
-    private void generateShipPositions()
+    private void GenerateShipPositions()
     {
        //Add logic here to place enemy ships
        //1. Use random number generator to determine vertical or horizontal placement (if (RNG(1) = 1) vertical = true)
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        printEnemyGridCells();
+        PrintEnemyGridCells();
         //generateShipPositions();
     }
 
@@ -46,22 +46,23 @@ public class GameManager : MonoBehaviour
     {
     }
 
-    private void printEnemyGridCells() //for debugging
+    private void PrintEnemyGridCells() //for debugging
     {
         for (int i = 0; i < enemyGridCells.Length; i++)
         {
             Debug.Log(enemyGridCells[i]);
         }
     }
-    private int randomNumberGenerator(int bound) //random number generator for placing ships
+    private int RandomNumberGenerator(int bound) //random number generator for placing ships
     {
         int number;
         number = UnityEngine.Random.Range(0, bound);
         return number;
     }
-    public void checkHit(GameObject cell)
+    public void CheckHit(GameObject cell)
     {
         //add logic here to check enemyShipCoordinates for hit (if (enemyShipCoordinates.Contains(cell.transform)) is hit)
         cell.GetComponent<EnemyGridChanges>().ChangeSprite(); //this will change the sprite of the tile to red
+        //we will also increment the total hits counter here to check for end of game
     }
 }

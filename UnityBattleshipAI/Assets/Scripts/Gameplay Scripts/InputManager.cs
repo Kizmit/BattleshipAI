@@ -57,7 +57,7 @@ public class InputManager : MonoBehaviour
                 else if (hit.transform != null && hit.transform.tag == "EnemyCell") //monitors for clicks on enemy grid
                 {
                     touchOffset = (Vector2)hit.transform.position - inputPosition;
-                    GetComponent<GameManager>().checkHit(hit.transform.gameObject);
+                    GetComponent<GameManager>().CheckHit(hit.transform.gameObject);
                     Debug.Log("Component that is grabbed is " + hit.transform.gameObject);
                 }
             }
