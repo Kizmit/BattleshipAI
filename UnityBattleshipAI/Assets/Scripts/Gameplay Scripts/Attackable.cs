@@ -31,9 +31,5 @@ public class Attackable : MonoBehaviour
     void Update()
     {
         //If this tile is clicked, change it to the new one.
-        if(Input.GetMouseButtonDown(0))
-        {
-            ChangeSprite();
-        }
     }
 }

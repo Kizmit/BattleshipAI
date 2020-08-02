@@ -5,6 +5,9 @@ public class InputManager : MonoBehaviour
 {
     private bool draggingItem = false;
     private GameObject draggedObject;
+
+
+    private GameObject clickedCell;
     private Vector2 touchOffset;
 
     void Update()
@@ -44,12 +47,18 @@ public class InputManager : MonoBehaviour
             if (touches.Length > 0)
             {
                 var hit = touches[0];
-                if (hit.transform != null && hit.transform.tag == "Tile")
+                if (hit.transform != null && hit.transform.tag == "Tile") //monitors for click on ship tiles
                 {
                     draggingItem = true;
                     draggedObject = hit.transform.gameObject;
                     touchOffset = (Vector2)hit.transform.position - inputPosition;
                     hit.transform.GetComponent<Tile>().PickUp();
+                }
+                else if (hit.transform != null && hit.transform.tag == "EnemyCell") //monitors for clicks on enemy grid
+                {
+                    touchOffset = (Vector2)hit.transform.position - inputPosition;
+                    GetComponent<GameManager>().checkHit(hit.transform.gameObject);
+                    Debug.Log("Component that is grabbed is " + hit.transform.gameObject);
                 }
             }
         }
