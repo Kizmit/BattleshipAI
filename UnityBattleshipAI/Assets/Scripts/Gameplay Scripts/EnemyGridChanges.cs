@@ -7,7 +7,9 @@ public class EnemyGridChanges : MonoBehaviour
 {
 
     [SerializeField]
-    public Sprite newSprite;
+    public Sprite redSprite;
+
+    public Sprite whiteSprite;
     public SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Awake()
@@ -21,8 +23,12 @@ public class EnemyGridChanges : MonoBehaviour
     void Update()
     {
     }
-    public void ChangeSprite()
+    public void ChangeSpriteRed()
     {
-        spriteRenderer.sprite = newSprite;
+        spriteRenderer.sprite = redSprite;
+    }
+    public void ChangeSpriteWhite()
+    {
+        spriteRenderer.sprite = whiteSprite;
     }
 }

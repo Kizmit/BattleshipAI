@@ -58,7 +58,7 @@ public class InputManager : MonoBehaviour
                 {
                     touchOffset = (Vector2)hit.transform.position - inputPosition;
                     GetComponent<GameManager>().CheckHit(hit.transform.gameObject);
-                    Debug.Log("Component that is grabbed is " + hit.transform.gameObject);
+                    //Debug.Log("Component that is grabbed is " + hit.transform.gameObject);
                 }
             }
         }

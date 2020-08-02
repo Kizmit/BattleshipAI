@@ -231,7 +231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
-  spriteRenderer: {fileID: 0}
 --- !u!4 &1463638156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 709490083310463686, guid: 51fc7255d02851c4e8eaa0eabc8c318d,
@@ -2742,7 +2741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607808775
 GameObject:
@@ -2775,7 +2775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607810639
 GameObject:
@@ -2840,7 +2841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607817043
 GameObject:
@@ -2873,7 +2875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607818335
 GameObject:
@@ -2906,7 +2909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607819395
 GameObject:
@@ -2939,7 +2943,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607821589
 GameObject:
@@ -2972,7 +2977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607822969
 GameObject:
@@ -3006,8 +3012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187a6f2e26db658418429e673e00f0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
 --- !u!114 &1607822971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3020,7 +3024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607822991
 GameObject:
@@ -3053,7 +3058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607831999
 GameObject:
@@ -3102,7 +3108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607839605
 GameObject:
@@ -3135,7 +3142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607845149
 GameObject:
@@ -3168,7 +3176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607849109
 GameObject:
@@ -3201,7 +3210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607851063
 GameObject:
@@ -3234,7 +3244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607852759
 GameObject:
@@ -3267,7 +3278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607853305
 GameObject:
@@ -3300,7 +3312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607854055
 GameObject:
@@ -3349,7 +3362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607859837
 GameObject:
@@ -3382,7 +3396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607897999
 GameObject:
@@ -3431,7 +3446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607904671
 GameObject:
@@ -3464,7 +3480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607905515
 GameObject:
@@ -3497,7 +3514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607909197
 GameObject:
@@ -3530,7 +3548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607909729
 GameObject:
@@ -3563,7 +3582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607920429
 GameObject:
@@ -3596,7 +3616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607922201
 GameObject:
@@ -3629,7 +3650,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1607925569
 GameObject:
@@ -5331,7 +5353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &217148656339337361
 GameObject:
@@ -5364,7 +5387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &220869970407444080
 Transform:
@@ -5411,7 +5435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &319472319752022948
 BoxCollider2D:
@@ -5584,7 +5609,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &523048079901050741
 Transform:
@@ -5681,7 +5707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &584479682124716147
 Transform:
@@ -5818,7 +5845,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &707091102504246403
 BoxCollider2D:
@@ -5877,7 +5905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &812693029206404153
 BoxCollider2D:
@@ -6000,7 +6029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &985037218539649671
 SpriteRenderer:
@@ -6111,7 +6141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &1100099681349921580
 Transform:
@@ -6274,7 +6305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &1187812630791453688
 BoxCollider2D:
@@ -6383,7 +6415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &1355578369935966718
 BoxCollider2D:
@@ -6442,7 +6475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &1363863094147400398
 BoxCollider2D:
@@ -6555,7 +6589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &1440128204906507215
 SpriteRenderer:
@@ -6680,7 +6715,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1546648571113705560
 GameObject:
@@ -6713,7 +6749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &1553293638520996707
 BoxCollider2D:
@@ -6967,7 +7004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1684471756326851835
 GameObject:
@@ -7000,7 +7038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &1691860781474757490
 SpriteRenderer:
@@ -7147,7 +7186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &1843148396024916772
 GameObject:
@@ -7180,7 +7220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &1857583630888542316
 SpriteRenderer:
@@ -7263,7 +7304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &1876396310863800772
 SpriteRenderer:
@@ -7346,7 +7388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &1915383861787428593
 Transform:
@@ -7393,7 +7436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &1944883785422032951
 SpriteRenderer:
@@ -7490,7 +7534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &2038162753083387088
 BoxCollider2D:
@@ -7575,7 +7620,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &2077826761633550748
 BoxCollider2D:
@@ -7634,7 +7680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &2093152057745925637
 Transform:
@@ -7681,7 +7728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &2142169349526807282
 Transform:
@@ -8082,7 +8130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &2520857478020931064
 Transform:
@@ -8179,7 +8228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &2623760586271965485
 GameObject:
@@ -8212,7 +8262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &2625209135022886822
 Transform:
@@ -8409,7 +8460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &2792964885291945592
 GameObject:
@@ -8442,7 +8494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &2805729208994114577
 GameObject:
@@ -8475,7 +8528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &2871815419973650929
 Transform:
@@ -8564,7 +8618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &3073155840288124428
 Transform:
@@ -8907,7 +8962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &3389406530557334619
 Transform:
@@ -8970,7 +9026,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &3483642052781626778
 SpriteRenderer:
@@ -9273,7 +9330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &3943995219383011268
 BoxCollider2D:
@@ -9382,7 +9440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &4080416038057228451
 BoxCollider2D:
@@ -9521,7 +9580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &4315730654396388876
 SpriteRenderer:
@@ -9784,7 +9844,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &4738532931263847961
 SpriteRenderer:
@@ -9881,7 +9942,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &4828950153244058212
 BoxCollider2D:
@@ -10288,7 +10350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &5145801851326767426
 Transform:
@@ -10399,7 +10462,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &5204584000889477372
 GameObject:
@@ -10432,7 +10496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &5211729315309807076
 GameObject:
@@ -10465,7 +10530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &5300614323113997000
 Transform:
@@ -10512,7 +10578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &5351170210054438931
 BoxCollider2D:
@@ -10621,7 +10688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &5362589021471400194
 Transform:
@@ -10844,7 +10912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &5574014182014637623
 SpriteRenderer:
@@ -10967,7 +11036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &5698188934328103590
 BoxCollider2D:
@@ -11095,7 +11165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &5782907634884619711
 BoxCollider2D:
@@ -11280,7 +11351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &5896324903857437280
 Transform:
@@ -11607,7 +11679,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &6334583855179520077
 SpriteRenderer:
@@ -11740,7 +11813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &6397179681575673370
 Transform:
@@ -12100,7 +12174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &6635398947169842544
 BoxCollider2D:
@@ -12237,7 +12312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &6702887876020642672
 SpriteRenderer:
@@ -12396,7 +12472,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &6833531292326537529
 Transform:
@@ -12493,7 +12570,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &6855535638164132174
 GameObject:
@@ -12526,7 +12604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &6912885086538300998
 GameObject:
@@ -12721,7 +12800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &7097252489128086701
 SpriteRenderer:
@@ -12804,7 +12884,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!4 &7120056797660944751
 Transform:
@@ -13171,7 +13252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &7807067884367214098
 GameObject:
@@ -13204,7 +13286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &7859346104880500512
 SpriteRenderer:
@@ -13287,7 +13370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &7901070470346392439
 BoxCollider2D:
@@ -13346,7 +13430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &7997423511163605648
 SpriteRenderer:
@@ -13669,7 +13754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &8232290892240938976
 GameObject:
@@ -13702,7 +13788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &8238294203716743356
 SpriteRenderer:
@@ -13854,7 +13941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &8317531689598898683
 BoxCollider2D:
@@ -14067,7 +14155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &8390273284658555882
 BoxCollider2D:
@@ -14126,7 +14215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &8465158983872537796
 SpriteRenderer:
@@ -14259,7 +14349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &8532266504620764023
 GameObject:
@@ -14292,7 +14383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &8606023038892676129
 BoxCollider2D:
@@ -14455,7 +14547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &8736781054377605652
 GameObject:
@@ -14488,7 +14581,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &8780889433080613251
 SpriteRenderer:
@@ -14779,7 +14873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!1 &9150818317038881379
 GameObject:
@@ -14812,7 +14907,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!61 &9157621817103588554
 BoxCollider2D:
@@ -14885,5 +14981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0833e7f651080489201928735e13df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  redSprite: {fileID: 21300000, guid: 58c3bdaf1f428234c85068e90343e2dc, type: 3}
+  whiteSprite: {fileID: 21300000, guid: f7f58d6fa243f5245952f41bb92a82a4, type: 3}
   spriteRenderer: {fileID: 0}
