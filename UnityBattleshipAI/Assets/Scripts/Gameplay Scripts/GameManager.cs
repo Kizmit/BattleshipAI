@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 //This script manages the enemy AI behavior
 public class GameManager : MonoBehaviour, IComparer
 {
     [SerializeField]
-    public Sprite newSprite;
 
-    private const int TURN_LIMIT = 1; //turn limit? not sure if turn control will be implemented here
     public const int GRID_SIZE = 99; //100-1 for 0 index
     public const int FRIGATE_HOLES = 5;
     public const int LARGE_CARRIER_HOLES = 7; //used to be seabase
@@ -17,40 +16,42 @@ public class GameManager : MonoBehaviour, IComparer
     public const int CRUISER_HOLES = 3;
     public const int CARRIER_HOLES = 5;
     public const int TOTAL_SHIP_HOLES = FRIGATE_HOLES + LARGE_CARRIER_HOLES + SUB_HOLES + CRUISER_HOLES + CARRIER_HOLES;
-
     private int[] shipSizes = new int[]{FRIGATE_HOLES, LARGE_CARRIER_HOLES, SUB_HOLES, CRUISER_HOLES, CARRIER_HOLES};
-    private List<GameObject> enemyShipLocations;
+    private List<GameObject> enemyShipLocations; //the gameObjects that 
     private List<Transform> ship1Transforms;
     private List<Transform> ship2Transforms;
     private List<Transform> ship3Transforms;
     private List<Transform> ship4Transforms;
     private List<Transform> ship5Transforms;
-
-    private List<GameObject> playerShipLocations; //the transforms of randomly chosen cells from enemyGridCells
+    private List<GameObject> playerShipLocations; //the gameObjects that player ships are touching
     private GameObject[] enemyGridCells; //array of all enemy grid cell objects
+    private GameObject[] playerGridCells; //array of all player grid cell objects
+    private GameObject[] ships; //references to all player ship tiles
 
-    private GameObject[] playerGridCells;
-    private GameObject[] ships;
-    private IEnumerator coroutine;
-
+    private bool easy, medium, hard, impossible;
     private int totalAIHits, totalPlayerHits;
-
-    private bool gameRunning, gameOver;
+    private bool gameRunning;
+    
     void Awake()
     {
+        easy = true;
+        medium = false;
+        hard = false;
+        impossible = false;
+        /*easy = GetComponent<NewGameMenu>().easy;
+        medium = GetComponent<NewGameMenu>().medium;
+        hard = GetComponent<NewGameMenu>().hard;
+        impossible = GetComponent<NewGameMenu>().impossible;*/
         playerShipLocations = new List<GameObject>();
         ships = GameObject.FindGameObjectsWithTag("Tile");
         enemyShipLocations = new List<GameObject>();
         SetCellArray();
         totalAIHits = 0;
         totalPlayerHits = 0;
-        gameOver = false;
     }
     void Start()
     {
-        //PrintEnemyGridCells();
         GenerateShipPositions();
-        
     }
 
     // Update is called once per frame
@@ -58,22 +59,59 @@ public class GameManager : MonoBehaviour, IComparer
     {
         if (gameRunning)
         {
-            Debug.Log("managing turns");
+            System.Threading.Thread.Sleep(100);
         
             if(!GetComponent<InputManager>().GetPlayerTurn())
             {
-                Debug.Log("pre-AIPureRNG");
-                AIPureRNG();
-                Debug.Log("post-AIPureRNG");
-
+                if(easy)
+                {
+                    AIPureRNG();
+                }
+                if(medium)
+                {
+                    AIMedium();
+                }
+                if(hard)
+                {
+                    AIHard();
+                }
+                if(impossible)
+                {
+                    AIImpossible();
+                }
             }
             if(totalAIHits == TOTAL_SHIP_HOLES || totalPlayerHits == TOTAL_SHIP_HOLES)
             {
-                gameOver = true;
+                gameRunning = false;
+                DetermineWinner();
             }
         } 
-    
-       
+    }
+
+    private void DetermineWinner()
+    {
+        bool playerWin;
+        if (totalAIHits == TOTAL_SHIP_HOLES)
+        {
+            playerWin = false;
+        }
+        else
+        {
+            playerWin = true;
+        }
+        WinBehavior(playerWin);
+    }
+
+    private void WinBehavior(bool playerWin)
+    {
+        if(playerWin)
+        {
+            SceneManager.LoadScene("PlayerWin", LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadScene("PlayerLoss", LoadSceneMode.Single);
+        }
     }
     
     int IComparer.Compare(object x, object y)
@@ -101,7 +139,7 @@ public class GameManager : MonoBehaviour, IComparer
 
     private void PlaceShip(int sizeIndex)
     {
-        GameObject[] openCells = new GameObject[11];
+        GameObject[] openCells = new GameObject[10];
         bool vertical = false;
         bool placed = false;
         int startIndex;
@@ -205,7 +243,6 @@ public class GameManager : MonoBehaviour, IComparer
 
     public void AIPureRNG()
     {
-        System.Threading.Thread.Sleep(100);
         int index;
         index = RandomNumberGenerator(GRID_SIZE);
         CheckAIHit(playerGridCells[index]);
@@ -217,19 +254,24 @@ public class GameManager : MonoBehaviour, IComparer
         index = RandomNumberGenerator(GRID_SIZE);
         CheckAIHit(playerGridCells[index]);
     }
-    private void PrintEnemyGridCells() //for debugging
+
+    private void AIHard()
     {
-        for (int i = 0; i < enemyGridCells.Length; i++)
-        {
-            Debug.Log(enemyGridCells[i]);
-        }
+
     }
+
+    private void AIImpossible()
+    {
+
+    }
+
     private int RandomNumberGenerator(int bound) //random number generator for placing ships
     {
         int number;
         number = UnityEngine.Random.Range(0, bound);
         return number;
     }
+
     public void CheckHit(GameObject cell)
     {
         
@@ -258,6 +300,7 @@ public class GameManager : MonoBehaviour, IComparer
         }
         GetComponent<InputManager>().SetPlayerTurn();
     }
+
     public void SetCoordinatesOfShip()
     {
         ship1Transforms = ships[0].GetComponent<Tile>().PassShipCoordinates();
@@ -307,29 +350,5 @@ public class GameManager : MonoBehaviour, IComparer
         SetCoordinatesOfShip();
         if(RandomNumberGenerator(2) == 1) GetComponent<InputManager>().SetPlayerTurn();
         gameRunning = true;
-        if(gameOver)
-        {
-            gameRunning = false;
-        }
     }
-
-    /*private void ManageTurns()
-    {
-        Debug.Log("managing turns");
-        if(RandomNumberGenerator(2) == 1) GetComponent<InputManager>().SetPlayerTurn();
-        
-        if(!GetComponent<InputManager>().GetPlayerTurn())
-        {
-            Debug.Log("pre-AIPureRNG");
-            AIPureRNG();
-            Debug.Log("post-AIPureRNG");
-            GetComponent<InputManager>().SetPlayerTurn();
-
-        }
-        if(totalAIHits == TOTAL_SHIP_HOLES || totalPlayerHits == TOTAL_SHIP_HOLES)
-        {
-        gameOver = true;
-        }
-    
-    }*/
 }
