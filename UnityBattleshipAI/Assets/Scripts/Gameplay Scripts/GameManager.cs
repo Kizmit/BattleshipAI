@@ -27,17 +27,18 @@ public class GameManager : MonoBehaviour, IComparer
     private GameObject[] enemyGridCells; //array of all enemy grid cell objects
     private GameObject[] playerGridCells; //array of all player grid cell objects
     private GameObject[] ships; //references to all player ship tiles
-
+     
+    private int impossibleIndex = 0; 
     private bool easy, medium, hard, impossible;
     private int totalAIHits, totalPlayerHits;
     private bool gameRunning;
     
     void Awake()
     {
-        easy = true;
+        easy = false;
         medium = false;
         hard = false;
-        impossible = false;
+        impossible = true;
         /*easy = GetComponent<NewGameMenu>().easy;
         medium = GetComponent<NewGameMenu>().medium;
         hard = GetComponent<NewGameMenu>().hard;
@@ -262,7 +263,8 @@ public class GameManager : MonoBehaviour, IComparer
 
     private void AIImpossible()
     {
-
+        CheckAIHit(playerShipLocations[impossibleIndex]);
+        impossibleIndex++;
     }
 
     private int RandomNumberGenerator(int bound) //random number generator for placing ships
