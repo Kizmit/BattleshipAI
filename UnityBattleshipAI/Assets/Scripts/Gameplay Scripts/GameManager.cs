@@ -34,8 +34,8 @@ public class GameManager : MonoBehaviour, IComparer
     
     void Awake()
     {
-        easy = true;
-        medium = false;
+        easy = false;
+        medium = true;
         hard = false;
         impossible = false;
         /*easy = GetComponent<NewGameMenu>().easy;
@@ -240,7 +240,7 @@ public class GameManager : MonoBehaviour, IComparer
             }
         }
     }
-
+    /********************************************** ALGORITHMS *******************************************************/
     public void AIPureRNG()
     {
         int index;
@@ -250,21 +250,96 @@ public class GameManager : MonoBehaviour, IComparer
 
     private void AIMedium()
     {
+        /* Algorithm: Randomly searches the board until it hits a ship.
+         * When a ship is hit, the algorithm will check three spaces above the original hit, three below, 
+         * three to the left, and three to the right. 
+         * After, the algorithm continues randomly searching for another hit.
+        */
         int index;
+        bool hit;
+        
         index = RandomNumberGenerator(GRID_SIZE);
-        CheckAIHit(playerGridCells[index]);
+        hit = CheckAIHit(playerGridCells[index]);
+
+        if (hit)
+        {
+            // Check that the new index has not been previously called.
+            // Check that the new index is in-bounds by rows (0-9, 10-19, 20-29, ..., 90-99).
+            // Check the the new index is in-bounds by columns (??)
+            // NOTE: What would happen if we didn't check bounds? Obviously, it would be slightly less efficient
+            // (such as continuing on to the next row, even though it's not possible for the ship to wrap to the next row).
+            // Ignoring NOTE for now.
+
+            // ABOVE: up one space (index - 10), up two spaces (index - 20), up three spaces (index - 30)
+            int newIndex = index;
+            while ((hit) && (newIndex <= (index - 30))) // While there is a hit and we are no more than three spaces away from the original hit...
+            {
+                newIndex = index - 10;
+                // Check that newIndex is in bounds (implement later) and has not been previously attacked.
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+
+            // BELOW: down one (index + 10), down two (index + 20), down three (index + 30)
+            newIndex = index;
+            while ((hit) && (newIndex <= (index + 30)))
+            {
+                newIndex = index + 10;
+                // Check that newIndex is in bounds (implement later) and has not been previously attacked.
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+
+            // LEFT: (index - 1), (index - 2), (index -3)
+            newIndex = index;
+            while ((hit) && (newIndex <= (index - 3)))
+            {
+                newIndex = index - 10;
+                // Check that newIndex is in bounds (implement later) and has not been previously attacked.
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+
+            // RIGHT: (index + 1), (index + 2), (index + 3)
+            newIndex = index;
+            while ((hit) && (newIndex <= (index + 3)))
+            {
+                newIndex = index + 1;
+                // Check that newIndex is in bounds (implement later) and has not been previously attacked.
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+
+        }
+
     }
 
     private void AIHard()
     {
-
+        /* Algorithm: Checks every other space - similair to only checking the black spaces on a checkerboard.
+         * When a ship is hit, the algorithm checks the three spaces above the original hit, three spaces below,
+         * three spaces left, and three spaces right.
+         * After, the algorithm resumes checking every other space (where it left off) until another hit.
+        */
+        int index = 0;
+        bool hit;
+        for (int i = 0; i <= GRID_SIZE; i++)
+        {
+            hit = CheckAIHit(playerGridCells[index]);
+            if (hit)
+            {
+                // Implement the algorithm from AIMedium.
+            }
+            else
+            {
+                index += 2;
+            }
+            
+        }
     }
 
     private void AIImpossible()
     {
+        /* Algorithm: The enemy AI already knows the player's ships' locations and gets a hit every time. */
 
     }
-
+    /*****************************************************************************************************************/
     private int RandomNumberGenerator(int bound) //random number generator for placing ships
     {
         int number;
@@ -287,18 +362,21 @@ public class GameManager : MonoBehaviour, IComparer
         GetComponent<InputManager>().SetPlayerTurn();
     }
 
-    public void CheckAIHit(GameObject cell)
+    public bool CheckAIHit(GameObject cell)
     {
         if(playerShipLocations.Contains(cell.gameObject)) 
         {
             cell.GetComponent<GridChanges>().ChangeSpriteRed();
             totalAIHits++;
+            GetComponent<InputManager>().SetPlayerTurn();
+            return true;
         } //hit
         else
         {
             cell.GetComponent<GridChanges>().ChangeSpriteWhite(); //miss
+            GetComponent<InputManager>().SetPlayerTurn();
+            return false;
         }
-        GetComponent<InputManager>().SetPlayerTurn();
     }
 
     public void SetCoordinatesOfShip()
