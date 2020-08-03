@@ -11134,6 +11134,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frigate
       objectReference: {fileID: 0}
+    - target: {fileID: 709490083310463693, guid: 51fc7255d02851c4e8eaa0eabc8c318d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d4850929d63bdab4d825f9ccb6e1fa76,
+        type: 3}
+    - target: {fileID: 709490083310463693, guid: 51fc7255d02851c4e8eaa0eabc8c318d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 6.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 709490083310463693, guid: 51fc7255d02851c4e8eaa0eabc8c318d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.09375
+      objectReference: {fileID: 0}
+    - target: {fileID: 709490083310463693, guid: 51fc7255d02851c4e8eaa0eabc8c318d,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51fc7255d02851c4e8eaa0eabc8c318d, type: 3}
 --- !u!1 &1531804829
@@ -19817,6 +19838,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 871294796}
     m_Modifications:
+    - target: {fileID: 1668196049430726038, guid: 9ce2a29cfb34eae49bc13d66200e2241,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1cd60052124d5e841917502159ff4eec,
+        type: 3}
     - target: {fileID: 1668196049451061518, guid: 9ce2a29cfb34eae49bc13d66200e2241,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -19836,7 +19863,7 @@ PrefabInstance:
     - target: {fileID: 1668196049451612692, guid: 9ce2a29cfb34eae49bc13d66200e2241,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.34
+      value: 2.28
       objectReference: {fileID: 0}
     - target: {fileID: 1668196049451612692, guid: 9ce2a29cfb34eae49bc13d66200e2241,
         type: 3}
@@ -23990,15 +24017,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1869976823804494419, guid: 3086a9cb82fb6bc468d52819deed9939,
         type: 2}
+    - target: {fileID: 5748333739333091474, guid: 7c1e99e1e0b7b7040b45cb6091383974,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0018641949
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748333739333091474, guid: 7c1e99e1e0b7b7040b45cb6091383974,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 9.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748333739333091474, guid: 7c1e99e1e0b7b7040b45cb6091383974,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.000061
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748333739333091474, guid: 7c1e99e1e0b7b7040b45cb6091383974,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.69789267
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748333739333091474, guid: 7c1e99e1e0b7b7040b45cb6091383974,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.033089638
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748333739333091474, guid: 7c1e99e1e0b7b7040b45cb6091383974,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8.746893
+      objectReference: {fileID: 0}
     - target: {fileID: 5748333739333091476, guid: 7c1e99e1e0b7b7040b45cb6091383974,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.7
+      value: -22.43
       objectReference: {fileID: 0}
     - target: {fileID: 5748333739333091476, guid: 7c1e99e1e0b7b7040b45cb6091383974,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.06
+      value: 4.28
       objectReference: {fileID: 0}
     - target: {fileID: 5748333739333091476, guid: 7c1e99e1e0b7b7040b45cb6091383974,
         type: 3}
@@ -24045,10 +24102,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5748333739333091477, guid: 7c1e99e1e0b7b7040b45cb6091383974,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d6dd28e1653312469389c24a2f5894b,
+        type: 3}
     - target: {fileID: 5748333739333091486, guid: 7c1e99e1e0b7b7040b45cb6091383974,
         type: 3}
       propertyPath: m_Name
-      value: Seabase
+      value: Dreadnought
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c1e99e1e0b7b7040b45cb6091383974, type: 3}
@@ -24795,6 +24858,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 871294796}
     m_Modifications:
+    - target: {fileID: 6433767223236270780, guid: 4423bcb88378fef41b921c83ac380418,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 80bac859e0cd0da4192e8d23ae0e6215,
+        type: 3}
     - target: {fileID: 6433767223255780900, guid: 4423bcb88378fef41b921c83ac380418,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -26838,6 +26907,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1869976823804494419, guid: 3086a9cb82fb6bc468d52819deed9939,
         type: 2}
+    - target: {fileID: 8243114984996769613, guid: 2a2fdb7e727d63947b4dbd07897455ad,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 671d61d327fa45e4591e36b49a3d8d6c,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2fdb7e727d63947b4dbd07897455ad, type: 3}
 --- !u!1 &8292131347206760947
