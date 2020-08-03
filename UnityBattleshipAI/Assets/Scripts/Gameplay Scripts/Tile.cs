@@ -70,6 +70,10 @@ public class Tile : MonoBehaviour
         }
         
     }
+    public List<Transform> PassShipCoordinates()
+    {
+        return touchingTiles;
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

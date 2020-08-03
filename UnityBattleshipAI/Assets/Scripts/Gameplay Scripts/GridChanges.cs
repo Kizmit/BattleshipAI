@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //This class manages each individual tile of the enemy grid
-public class EnemyGridChanges : MonoBehaviour
+public class GridChanges : MonoBehaviour
 {
 
     [SerializeField]

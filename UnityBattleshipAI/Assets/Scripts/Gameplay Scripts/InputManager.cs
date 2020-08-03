@@ -4,8 +4,9 @@ using System.Collections;
 public class InputManager : MonoBehaviour
 {
     private bool draggingItem = false;
+    private bool lockedIn = false;
+    private bool playerTurn;
     private GameObject draggedObject;
-
 
     private GameObject clickedCell;
     private Vector2 touchOffset;
@@ -47,22 +48,50 @@ public class InputManager : MonoBehaviour
             if (touches.Length > 0)
             {
                 var hit = touches[0];
-                if (hit.transform != null && hit.transform.tag == "Tile") //monitors for click on ship tiles
+                if (hit.transform != null && hit.transform.tag == "Tile" && !lockedIn) //monitors for click on ship tiles
                 {
                     draggingItem = true;
                     draggedObject = hit.transform.gameObject;
                     touchOffset = (Vector2)hit.transform.position - inputPosition;
                     hit.transform.GetComponent<Tile>().PickUp();
                 }
-                else if (hit.transform != null && hit.transform.tag == "EnemyCell") //monitors for clicks on enemy grid
+                else if (hit.transform != null && hit.transform.tag == "EnemyCell" && playerTurn && lockedIn) //monitors for clicks on enemy grid
                 {
                     touchOffset = (Vector2)hit.transform.position - inputPosition;
                     GetComponent<GameManager>().CheckHit(hit.transform.gameObject);
+                    playerTurn = false;
+                    Debug.Log(playerTurn + " in raycast");
                     //Debug.Log("Component that is grabbed is " + hit.transform.gameObject);
                 }
             }
         }
     }
+
+    public void SetLockedIn()
+    {
+        lockedIn = true;
+    }
+
+    public void SetPlayerTurn()
+    {
+       
+        if(playerTurn == false) 
+        {
+            playerTurn = true;
+            Debug.Log(playerTurn + " SetPlayerTurn if");
+        }
+        else 
+        {
+            playerTurn = false;
+            Debug.Log(playerTurn + " SetPlayerTurn else");
+        }
+    }
+    public bool GetPlayerTurn()
+    {
+        Debug.Log(playerTurn + " GetPlayerTurn");
+        return playerTurn;
+    }
+
     private bool HasInput
     {
         get
