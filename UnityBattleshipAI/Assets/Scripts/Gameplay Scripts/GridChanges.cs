@@ -8,20 +8,12 @@ public class GridChanges : MonoBehaviour
 
     [SerializeField]
     public Sprite redSprite;
-
     public Sprite whiteSprite;
     public SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Awake()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-    }
-    void Start()
-    {
-    }
-    // Update is called once per frame
-    void Update()
-    {
     }
     public void ChangeSpriteRed()
     {
