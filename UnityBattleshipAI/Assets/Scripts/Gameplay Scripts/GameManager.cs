@@ -30,8 +30,7 @@ public class GameManager : MonoBehaviour, IComparer
     private GameObject shipPlacementWarningText;
 
     private bool easy, medium, hard, impossible; //difficulties
-    private int totalAIHits, totalPlayerHits, medIndex, medNewIndex, hardIndex, hardNewIndex, impossibleIndex,
-                medHitCount, hardHitCount; //game control
+    private int totalAIHits, totalPlayerHits, medIndex, hardIndex, impossibleIndex; //game control
     private bool gameRunning, hit; //game control
     
     void Awake()
@@ -266,7 +265,6 @@ public class GameManager : MonoBehaviour, IComparer
 
         medIndex = RandomNumberGenerator(GRID_SIZE);
         hit = CheckAIHit(playerGridCells[medIndex]);
-        medHitCount = 0;
         bool foundIndex = false;
 
         while (!foundIndex)
@@ -312,11 +310,10 @@ public class GameManager : MonoBehaviour, IComparer
 
         hardIndex = 0;
         hit = CheckAIHit(playerGridCells[hardIndex]);
-        hardNewIndex = hardIndex;
         
         if (hit)
         {
-            // INSERT MediumAI ALGORITHM
+            // INSERT MediumAI ALGORITHM WITH ADJUSTMENTS
         }
         else
         {
