@@ -299,27 +299,6 @@ public class GameManager : MonoBehaviour, IComparer
             }
             else continue;
         }
-
-       
-
-
-
-
-        // ABOVE: up one space (index - 10), up two spaces (index - 20)
-
-        // BELOW: down one (index + 10), down two (index + 20)
-
-        // LEFT: (index - 1), (index - 2)
-
-        // RIGHT: (index + 1), (index + 2)
-
-
-
-        if (playerShipLocations.Contains(playerGridCells[medNewIndex]))
-        {
-            hit = CheckAIHit(playerGridCells[medNewIndex]);
-        }
-
     }
 
     private void AIHard()   // May not implement.
