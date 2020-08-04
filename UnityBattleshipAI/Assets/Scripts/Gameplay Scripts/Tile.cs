@@ -70,7 +70,7 @@ public class Tile : MonoBehaviour
         }
         
     }
-    public List<Transform> PassShipCoordinates()
+    public List<Transform> GetShipCoordinates()
     {
         return touchingTiles;
     }

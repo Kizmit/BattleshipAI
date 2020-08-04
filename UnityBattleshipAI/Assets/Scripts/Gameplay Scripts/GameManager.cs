@@ -16,22 +16,17 @@ public class GameManager : MonoBehaviour, IComparer
     public const int CARRIER_HOLES = 5;
     public const int TOTAL_SHIP_HOLES = FRIGATE_HOLES + LARGE_CARRIER_HOLES + SUB_HOLES + CRUISER_HOLES + CARRIER_HOLES;
     private int[] shipSizes;
-     
-
-    /*---Transforms of player ship objects--*/
-    private List<Transform> ship1Transforms; 
-    private List<Transform> ship2Transforms;
-    private List<Transform> ship3Transforms;
-    private List<Transform> ship4Transforms;
-    private List<Transform> ship5Transforms;
-    /*--------------------------------------*/
     
+    private List<int> usedIndices; //list of indices checked by AI algorithm during game
+       
     private List<GameObject> enemyShipLocations; //the gameObjects that the enemy ships are positioned over
     private List<GameObject> playerShipLocations; //the gameObjects that the player ships are positioned over
     private GameObject[] enemyGridCells; //array of all enemy grid cell objects
     private GameObject[] playerGridCells; //array of all player grid cell objects
     private GameObject[] ships; //references to all player ship tiles
-     
+
+    private GameObject shipPlacementWarningText;
+
     private bool easy, medium, hard, impossible; //difficulties
     private int totalAIHits, totalPlayerHits, impossibleIndex; //game control
     private bool gameRunning; //game control
@@ -54,6 +49,8 @@ public class GameManager : MonoBehaviour, IComparer
         ships = GameObject.FindGameObjectsWithTag("Tile");
         shipSizes = new int[]{FRIGATE_HOLES, LARGE_CARRIER_HOLES, SUB_HOLES, CRUISER_HOLES, CARRIER_HOLES};
         
+        usedIndices = new List<int>();
+        
         /*Add all grid objects to an array and sort them by their positions*/
         SetCellArray();
         
@@ -61,6 +58,9 @@ public class GameManager : MonoBehaviour, IComparer
         totalAIHits = 0;
         totalPlayerHits = 0;
         impossibleIndex = 0;
+
+        shipPlacementWarningText = GameObject.FindGameObjectWithTag("WarningMessage");
+        shipPlacementWarningText.SetActive(false);
     }
 
     void Start()
@@ -238,9 +238,19 @@ public class GameManager : MonoBehaviour, IComparer
 
     public void AIPureRNG()
     {
+        bool foundIndex = false;
         int index;
-        index = RandomNumberGenerator(GRID_SIZE);
-        CheckAIHit(playerGridCells[index]);
+        while(!foundIndex)
+        {
+            index = RandomNumberGenerator(GRID_SIZE);
+            if(!usedIndices.Contains(index))
+            {   
+                usedIndices.Add(index);
+                CheckAIHit(playerGridCells[index]);
+                foundIndex = true;
+            }
+            else continue;
+        }
     }
 
     private void AIMedium()
@@ -301,52 +311,44 @@ public class GameManager : MonoBehaviour, IComparer
 
     public void SetCoordinatesOfShip()
     {
-        ship1Transforms = ships[0].GetComponent<Tile>().PassShipCoordinates();
-        ship2Transforms = ships[1].GetComponent<Tile>().PassShipCoordinates();
-        ship3Transforms = ships[2].GetComponent<Tile>().PassShipCoordinates();
-        ship4Transforms = ships[3].GetComponent<Tile>().PassShipCoordinates();
-        ship5Transforms = ships[4].GetComponent<Tile>().PassShipCoordinates();
-        Transform[] temp1 = new Transform[ship1Transforms.Count];
-        Transform[] temp2 = new Transform[ship2Transforms.Count];
-        Transform[] temp3 = new Transform[ship3Transforms.Count];
-        Transform[] temp4 = new Transform[ship4Transforms.Count];
-        Transform[] temp5 = new Transform[ship5Transforms.Count];
-        temp1 = ship1Transforms.ToArray();
-        temp2 = ship2Transforms.ToArray();
-        temp3 = ship3Transforms.ToArray();
-        temp4 = ship4Transforms.ToArray();
-        temp5 = ship5Transforms.ToArray();
-        for(int i = 0; i < ship1Transforms.Count; i++)
+        List<Transform> touchingTiles = new List<Transform>();
+
+        if(playerShipLocations.Count > 0) playerShipLocations.Clear();
+
+        for (int i = 0; i < ships.Length; i++)
         {
-            playerShipLocations.Add(temp1[i].gameObject);
+            touchingTiles.AddRange(ships[i].GetComponent<Tile>().GetShipCoordinates());
         }
-        for(int i = 0; i < ship2Transforms.Count; i++)
+        foreach(Transform obj in touchingTiles)
         {
-            playerShipLocations.Add(temp2[i].gameObject);
+            playerShipLocations.Add(obj.gameObject);
         }
-        for(int i = 0; i < ship3Transforms.Count; i++)
+
+        if(playerShipLocations.Count < TOTAL_SHIP_HOLES) 
         {
-            playerShipLocations.Add(temp3[i].gameObject);
+        playerShipLocations.Clear();
+        return;
         }
-        for(int i = 0; i < ship4Transforms.Count; i++)
-        {
-            playerShipLocations.Add(temp4[i].gameObject);
-        }
-        for(int i = 0; i < ship5Transforms.Count; i++)
-        {
-            playerShipLocations.Add(temp5[i].gameObject);
-        }
-        /*foreach (UnityEngine.Object obj in playerShipLocations)
-        {
-            Debug.Log("obj = " + obj.name);
-        }*/
-        GetComponent<InputManager>().SetLockedIn();
+
+        else GetComponent<InputManager>().SetLockedIn();
     }   
 
     public void Confirm()
     {
         SetCoordinatesOfShip();
-        if(RandomNumberGenerator(2) == 1) GetComponent<InputManager>().SetPlayerTurn();
-        gameRunning = true;
+
+        if(playerShipLocations.Count < TOTAL_SHIP_HOLES) 
+        {
+            shipPlacementWarningText.SetActive(true);
+            return;
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("ConfirmButton").SetActive(false);
+            shipPlacementWarningText.SetActive(false);
+            if(RandomNumberGenerator(2) == 1) GetComponent<InputManager>().SetPlayerTurn();
+            gameRunning = true;
+
+        }
     }
 }

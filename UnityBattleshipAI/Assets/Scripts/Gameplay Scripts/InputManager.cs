@@ -7,8 +7,6 @@ public class InputManager : MonoBehaviour
     private bool lockedIn = false;
     private bool playerTurn;
     private GameObject draggedObject;
-
-    private GameObject clickedCell;
     private Vector2 touchOffset;
 
     void Update()
@@ -96,7 +94,6 @@ public class InputManager : MonoBehaviour
     {
         get
         {
-            // returns true if either the mouse button is down or at least one touch is felt on the screen
             return Input.GetMouseButton(0);
         }
     }
