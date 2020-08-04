@@ -8,42 +8,56 @@ using System;
 public class GameManager : MonoBehaviour, IComparer
 {
     [SerializeField]
-
     public const int GRID_SIZE = 99; //100-1 for 0 index
     public const int FRIGATE_HOLES = 5;
-    public const int LARGE_CARRIER_HOLES = 7; //used to be seabase
+    public const int LARGE_CARRIER_HOLES = 7;
     public const int SUB_HOLES = 3;
     public const int CRUISER_HOLES = 3;
     public const int CARRIER_HOLES = 5;
     public const int TOTAL_SHIP_HOLES = FRIGATE_HOLES + LARGE_CARRIER_HOLES + SUB_HOLES + CRUISER_HOLES + CARRIER_HOLES;
     private int[] shipSizes;
-    private List<GameObject> enemyShipLocations; //the gameObjects that are enemy ships 
-    private List<Transform> ship1Transforms;
+     
+
+    /*---Transforms of player ship objects--*/
+    private List<Transform> ship1Transforms; 
     private List<Transform> ship2Transforms;
     private List<Transform> ship3Transforms;
     private List<Transform> ship4Transforms;
     private List<Transform> ship5Transforms;
-    private List<GameObject> playerShipLocations; //the gameObjects that player ships are touching
+    /*--------------------------------------*/
+    
+    private List<GameObject> enemyShipLocations; //the gameObjects that the enemy ships are positioned over
+    private List<GameObject> playerShipLocations; //the gameObjects that the player ships are positioned over
     private GameObject[] enemyGridCells; //array of all enemy grid cell objects
     private GameObject[] playerGridCells; //array of all player grid cell objects
     private GameObject[] ships; //references to all player ship tiles
      
-    private int impossibleIndex; 
-    private bool easy, medium, hard, impossible;
-    private int totalAIHits, totalPlayerHits;
-    private bool gameRunning;
+    private bool easy, medium, hard, impossible; //difficulties
+    private int totalAIHits, totalPlayerHits, impossibleIndex; //game control
+    private bool gameRunning; //game control
     
     void Awake()
     {
+        /*Set difficulties based on menu choice*/
         easy = NewGameMenu.easy;
         medium = NewGameMenu.medium;
         hard = NewGameMenu.hard;
         impossible = NewGameMenu.impossible;
+
+        if(!easy && !medium && !hard && !impossible) easy = true; //set a default difficulty if not selection is made
+        
+        /*Initialize shipLocation lists*/
         playerShipLocations = new List<GameObject>();
-        ships = GameObject.FindGameObjectsWithTag("Tile");
         enemyShipLocations = new List<GameObject>();
+        
+        /*Get reference to player ships and store their sizes in an array*/
+        ships = GameObject.FindGameObjectsWithTag("Tile");
         shipSizes = new int[]{FRIGATE_HOLES, LARGE_CARRIER_HOLES, SUB_HOLES, CRUISER_HOLES, CARRIER_HOLES};
+        
+        /*Add all grid objects to an array and sort them by their positions*/
         SetCellArray();
+        
+        /*Initialize count variables*/
         totalAIHits = 0;
         totalPlayerHits = 0;
         impossibleIndex = 0;
@@ -124,11 +138,8 @@ public class GameManager : MonoBehaviour, IComparer
         IComparer myComparer = new GameManager();
         enemyGridCells = GameObject.FindGameObjectsWithTag("EnemyCell"); //Puts all of the enemy grid cells into an array
         playerGridCells = GameObject.FindGameObjectsWithTag("Cell"); //Puts all of the player grid cells into an array
-        Array.Sort(enemyGridCells, myComparer);
-        /*foreach (UnityEngine.Object obj in playerGridCells)
-        {
-            Debug.Log("obj = " + obj.name);
-        }*/
+        Array.Sort(enemyGridCells, myComparer); //sorts the cells from position 1 to 100 for build
+        Array.Sort(playerGridCells, myComparer);
     }
     private void GenerateShipPositions()
     {
@@ -142,20 +153,22 @@ public class GameManager : MonoBehaviour, IComparer
         GameObject[] openCells = new GameObject[10];
         bool vertical = false;
         bool placed = false;
-        int startIndex;
-        int count;
+        int startIndex, count;
+
         while(!placed)
         {
             count = 0;
-            if(RandomNumberGenerator(2) == 1) 
+            if(RandomNumberGenerator(2) == 1) //determine ship orientation 
             {
                vertical = true; 
                Debug.Log("Placing Vertical");
             }
-            startIndex = RandomNumberGenerator(GRID_SIZE);
-            //Debug.Log("Start cell is " + (startIndex + 1));
-            if(enemyShipLocations.Contains(enemyGridCells[startIndex])){continue;}
-            if(vertical)
+            
+            startIndex = RandomNumberGenerator(GRID_SIZE); //get random position of grid
+            
+            if(enemyShipLocations.Contains(enemyGridCells[startIndex])) continue; //if random grid position occupied, retry loop
+            
+            if(vertical) //if the ship should be oriented vertically
             {
                 for(int i = startIndex, j = 0; i < GRID_SIZE; i += 10, j++) //check above start index
                 {
@@ -181,24 +194,10 @@ public class GameManager : MonoBehaviour, IComparer
                         count++;
                     }
                 }
-                
-                if(openCells.Length - (openCells.Length - count) < shipSizes[sizeIndex]) placed = false; 
-                else
-                {
-                    /*for(int i = 0; i< shipSizes[sizeIndex]; i++)
-                    {
-                        Debug.Log(openCells[i]);
-                    }*/
-                   for(int i = 0; i < shipSizes[sizeIndex]; i++)
-                   {
-                       enemyShipLocations.Add(openCells[i]);
-                   }
-                   placed = true;
-                }
             }
-            else
+            
+            else //ship oriented horizontally
             {
-    
                 for(int i = startIndex, j = 0; i > startIndex - ((startIndex % 10)); i--, j++) //check to the left of start
                 {
                     if(enemyShipLocations.Contains(enemyGridCells[i]))
@@ -223,20 +222,16 @@ public class GameManager : MonoBehaviour, IComparer
                         count++;
                     }
                 }
+            }
 
-                if(openCells.Length - (openCells.Length - count) < shipSizes[sizeIndex]) placed = false; 
-                else
+            if(openCells.Length - (openCells.Length - count) < shipSizes[sizeIndex]) placed = false;  //Is there space for the ship?
+            else //There is space for the ship
+            {
+                for(int i = 0; i < shipSizes[sizeIndex]; i++)
                 {
-                    /*for(int i = 0; i < shipSizes[sizeIndex]; i++)
-                    {
-                        Debug.Log(openCells[i]);
-                    }*/
-                    for(int i = 0; i < shipSizes[sizeIndex]; i++)
-                    {
-                       enemyShipLocations.Add(openCells[i]);
-                    }
-                    placed = true;
+                    enemyShipLocations.Add(openCells[i]);
                 }
+                placed = true;
             }
         }
     }
@@ -276,15 +271,15 @@ public class GameManager : MonoBehaviour, IComparer
     public void CheckHit(GameObject cell)
     {
         
-        if(enemyShipLocations.Contains(cell.gameObject))
+        if(enemyShipLocations.Contains(cell.gameObject)) //hit
         {
             cell.GetComponent<GridChanges>().ChangeSpriteRed();
             cell.GetComponent<BoxCollider2D>().enabled = false;
             totalPlayerHits++;
-        } //hit
-        else
+        } 
+        else //miss
         {
-            cell.GetComponent<GridChanges>().ChangeSpriteWhite(); //miss
+            cell.GetComponent<GridChanges>().ChangeSpriteWhite(); 
             cell.GetComponent<BoxCollider2D>().enabled = false;
         }
         GetComponent<InputManager>().SetPlayerTurn();
@@ -292,14 +287,14 @@ public class GameManager : MonoBehaviour, IComparer
 
     public void CheckAIHit(GameObject cell)
     {
-        if(playerShipLocations.Contains(cell.gameObject)) 
+        if(playerShipLocations.Contains(cell.gameObject)) //hit
         {
             cell.GetComponent<GridChanges>().ChangeSpriteRed();
             totalAIHits++;
-        } //hit
-        else
+        } 
+        else //miss
         {
-            cell.GetComponent<GridChanges>().ChangeSpriteWhite(); //miss
+            cell.GetComponent<GridChanges>().ChangeSpriteWhite(); 
         }
         GetComponent<InputManager>().SetPlayerTurn();
     }
