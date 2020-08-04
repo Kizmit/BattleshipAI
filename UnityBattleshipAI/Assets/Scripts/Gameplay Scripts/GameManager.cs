@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour, IComparer
     public const int CRUISER_HOLES = 3;
     public const int CARRIER_HOLES = 5;
     public const int TOTAL_SHIP_HOLES = FRIGATE_HOLES + LARGE_CARRIER_HOLES + SUB_HOLES + CRUISER_HOLES + CARRIER_HOLES;
-    private int[] shipSizes = new int[]{FRIGATE_HOLES, LARGE_CARRIER_HOLES, SUB_HOLES, CRUISER_HOLES, CARRIER_HOLES};
-    private List<GameObject> enemyShipLocations; //the gameObjects that 
+    private int[] shipSizes;
+    private List<GameObject> enemyShipLocations; //the gameObjects that are enemy ships 
     private List<Transform> ship1Transforms;
     private List<Transform> ship2Transforms;
     private List<Transform> ship3Transforms;
@@ -28,28 +28,27 @@ public class GameManager : MonoBehaviour, IComparer
     private GameObject[] playerGridCells; //array of all player grid cell objects
     private GameObject[] ships; //references to all player ship tiles
      
-    private int impossibleIndex = 0; 
+    private int impossibleIndex; 
     private bool easy, medium, hard, impossible;
     private int totalAIHits, totalPlayerHits;
     private bool gameRunning;
     
     void Awake()
     {
-        easy = false;
-        medium = false;
-        hard = false;
-        impossible = true;
-        /*easy = GetComponent<NewGameMenu>().easy;
-        medium = GetComponent<NewGameMenu>().medium;
-        hard = GetComponent<NewGameMenu>().hard;
-        impossible = GetComponent<NewGameMenu>().impossible;*/
+        easy = NewGameMenu.easy;
+        medium = NewGameMenu.medium;
+        hard = NewGameMenu.hard;
+        impossible = NewGameMenu.impossible;
         playerShipLocations = new List<GameObject>();
         ships = GameObject.FindGameObjectsWithTag("Tile");
         enemyShipLocations = new List<GameObject>();
+        shipSizes = new int[]{FRIGATE_HOLES, LARGE_CARRIER_HOLES, SUB_HOLES, CRUISER_HOLES, CARRIER_HOLES};
         SetCellArray();
         totalAIHits = 0;
         totalPlayerHits = 0;
+        impossibleIndex = 0;
     }
+
     void Start()
     {
         GenerateShipPositions();
@@ -68,15 +67,15 @@ public class GameManager : MonoBehaviour, IComparer
                 {
                     AIPureRNG();
                 }
-                if(medium)
+                else if(medium)
                 {
                     AIMedium();
                 }
-                if(hard)
+                else if(hard)
                 {
                     AIHard();
                 }
-                if(impossible)
+                else if(impossible)
                 {
                     AIImpossible();
                 }
@@ -287,7 +286,6 @@ public class GameManager : MonoBehaviour, IComparer
         {
             cell.GetComponent<GridChanges>().ChangeSpriteWhite(); //miss
             cell.GetComponent<BoxCollider2D>().enabled = false;
-
         }
         GetComponent<InputManager>().SetPlayerTurn();
     }
