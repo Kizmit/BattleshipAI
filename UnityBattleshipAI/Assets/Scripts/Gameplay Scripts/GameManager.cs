@@ -260,73 +260,100 @@ public class GameManager : MonoBehaviour, IComparer
         bool hit;
         index = RandomNumberGenerator(GRID_SIZE);
         hit = CheckAIHit(playerGridCells[index]);
-        int newIndex = index;
+        int newIndex;
 
-            // Check that the new index has not been previously called.
-            // Check that the new index is in-bounds by rows (0-9, 10-19, 20-29, ..., 90-99).
-            // Check the the new index is in-bounds by columns (??)
-            // NOTE: What would happen if we didn't check bounds? Obviously, it would be slightly less efficient
-            // (such as continuing on to the next row, even though it's not possible for the ship to wrap to the next row).
-            // Ignoring NOTE for now.
+        // Check that the new index has not been previously called.
+        // Check that the new index is in-bounds by rows (0-9, 10-19, 20-29, ..., 90-99).
+        // Check the the new index is in-bounds by columns (??)
+        // NOTE: What would happen if we didn't check bounds? Obviously, it would be slightly less efficient
+        // (such as continuing on to the next row, even though it's not possible for the ship to wrap to the next row).
+        // Ignoring NOTE for now.
 
+        if (hit)
+        {
             // ABOVE: up one space (index - 10), up two spaces (index - 20), up three spaces (index - 30)
-            while ((hit) && (newIndex <= (index - 30))) // While there is a hit and we are no more than three spaces away from the original hit...
+
+            newIndex = index - 10;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
             {
-                newIndex -= 10;
-                if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
-                {
-                    hit = CheckAIHit(playerGridCells[newIndex]);
-                }
-                else
-                {
-                    hit = false;
-                }  
+                hit = CheckAIHit(playerGridCells[newIndex]);
             }
 
-            // BELOW: down one (index + 10), down two (index + 20), down three (index + 30)
-            newIndex = index;
-            while ((hit) && (newIndex <= (index + 30)))
+            newIndex = index - 20;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
             {
-                newIndex += 10;
-                if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
-                {
-                    hit = CheckAIHit(playerGridCells[newIndex]);
-                }
-                else
-                {
-                    hit = false;
-                }
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+
+            newIndex = index - 30;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
+            {
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+
+
+            // BELOW: down one (index + 10), down two (index + 20), down three (index + 30)
+
+            newIndex = index + 10;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
+            {
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+
+            newIndex = index + 20;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
+            {
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+
+            newIndex = index + 30;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
+            {
+                hit = CheckAIHit(playerGridCells[newIndex]);
             }
 
             // LEFT: (index - 1), (index - 2), (index -3)
-            newIndex = index;
-            while ((hit) && (newIndex <= (index - 3)))
+
+            newIndex = index - 1;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
             {
-                newIndex -= 1;
-                if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
-                {
-                    hit = CheckAIHit(playerGridCells[newIndex]);
-                }
-                else
-                {
-                    hit = false;
-                }
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+
+            newIndex = index - 2;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
+            {
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+
+            newIndex = index - 3;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
+            {
+                hit = CheckAIHit(playerGridCells[newIndex]);
             }
 
             // RIGHT: (index + 1), (index + 2), (index + 3)
-            newIndex = index;
-            while ((hit) && (newIndex <= (index + 3)))
+
+            newIndex = index + 1;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
             {
-                newIndex += 1;
-                if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
-                {
-                    hit = CheckAIHit(playerGridCells[newIndex]);
-                }
-                else
-                {
-                    hit = false;
-                }
+                hit = CheckAIHit(playerGridCells[newIndex]);
             }
+
+            newIndex = index + 2;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
+            {
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+
+            newIndex = index + 3;
+            if (inBoundsRow(index, newIndex) || inBoundsCol(index, newIndex))
+            {
+                hit = CheckAIHit(playerGridCells[newIndex]);
+            }
+        }
+
+
     }
 
     private void AIHard()
