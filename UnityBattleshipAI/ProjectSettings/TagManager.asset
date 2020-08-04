@@ -8,6 +8,8 @@ TagManager:
   - Cell
   - OutOfBounds
   - EnemyCell
+  - ConfirmButton
+  - WarningMessage
   layers:
   - Default
   - TransparentFX
