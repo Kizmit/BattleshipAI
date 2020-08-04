@@ -280,11 +280,14 @@ public class GameManager : MonoBehaviour, IComparer
         if(enemyShipLocations.Contains(cell.gameObject))
         {
             cell.GetComponent<GridChanges>().ChangeSpriteRed();
+            cell.GetComponent<BoxCollider2D>().enabled = false;
             totalPlayerHits++;
         } //hit
         else
         {
             cell.GetComponent<GridChanges>().ChangeSpriteWhite(); //miss
+            cell.GetComponent<BoxCollider2D>().enabled = false;
+
         }
         GetComponent<InputManager>().SetPlayerTurn();
     }
