@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour, IComparer
         hard = NewGameMenu.hard;
         impossible = NewGameMenu.impossible;
 
-        if(!easy && !medium && !hard && !impossible) easy = true; //set a default difficulty if not selection is made
+        if(!easy && !medium && !hard && !impossible) easy = true; //set a default difficulty if not selected in menu
         
         /*Initialize shipLocation lists*/
         playerShipLocations = new List<GameObject>();
