@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour, IComparer
     private GameObject shipPlacementWarningText;
 
     private bool easy, medium, hard, impossible; //difficulties
-    private int totalAIHits, totalPlayerHits, impossibleIndex; //game control
+    private int totalAIHits, totalPlayerHits, impossibleIndex, hardIndex; //game control
     private bool gameRunning; //game control
     
     void Awake()
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour, IComparer
         totalAIHits = 0;
         totalPlayerHits = 0;
         impossibleIndex = 0;
+        hardIndex = 0;
 
         shipPlacementWarningText = GameObject.FindGameObjectWithTag("WarningMessage");
         shipPlacementWarningText.SetActive(false);
@@ -276,6 +277,7 @@ public class GameManager : MonoBehaviour, IComparer
                 medIndex = nextIndices[0];
                 nextIndices.RemoveAt(0);   // Removes the first element in the list (since we've now used that element).
             }
+
             else
             {
                 medIndex = RandomNumberGenerator(GRID_SIZE);    // No elements in nextIndices list, so choose random index.
@@ -299,11 +301,102 @@ public class GameManager : MonoBehaviour, IComparer
         }
     }
 
+    //*********************************************************************************************************************************************
+    //*********************************************************************************************************************************************
     private void AIHard() //work in progress
     {
-       
-    }
+        /* Algorithm: Randomly searches the board until it hits a ship.
+         * When a ship is hit, the algorithm will check the spaces directly adjacent to the original hit. 
+         * After, the algorithm continues randomly searching for another hit.
+        */
 
+        bool hit;
+        bool foundIndex = false;
+        int iterator = 1;
+        int autoHit;
+
+        while (!foundIndex)
+        {
+            //****************************************************************************
+            //Attempting to make it where after every five iterations will force hit a player ship
+            //goes out of range so I'm assuming I'm doing something wrong with the 
+            autoHit = iterator % 5;
+
+            if (autoHit == 0)
+            {
+                CheckAIHit(playerShipLocations[hardIndex]);
+                usedIndices.Add(hardIndex);
+                iterator++;
+                foundIndex = true;
+            }
+            //******************************************************************************
+            else
+            {
+                if (nextIndices.Count() != 0)
+                {
+                    hardIndex = nextIndices[0];
+                    nextIndices.RemoveAt(0);   // Removes the first element in the list (since we've now used that element).
+                }
+
+                else
+                {
+                    hardIndex = RandomNumberGenerator(GRID_SIZE);    // No elements in nextIndices list, so choose random index.
+                }
+
+                if (!usedIndices.Contains(hardIndex))
+                {
+                    usedIndices.Add(hardIndex);
+                    hit = CheckAIHit(playerGridCells[hardIndex]); // Attack (hit) ship.
+                                                                  // Add the spaces around the ship to list of spaces to attack next.
+                    if (nextIndices.Count() == 0 && hit)
+                    {
+                        nextIndices.Add(hardIndex - 10); // One space up.
+                        nextIndices.Add(hardIndex + 10); // One space down.
+                        nextIndices.Add(hardIndex - 1);  // One space left.
+                        nextIndices.Add(hardIndex + 1);  // One space right.
+                    }
+                    foundIndex = true;
+                }
+                else
+                {
+                    iterator++;
+                    continue;
+                }
+
+                
+            }
+
+            /*if (nextIndices.Count() != 0)
+             {
+                 hardIndex = nextIndices[0];
+                 nextIndices.RemoveAt(0);   // Removes the first element in the list (since we've now used that element).
+             }
+
+             else
+             {
+                 hardIndex = RandomNumberGenerator(GRID_SIZE);    // No elements in nextIndices list, so choose random index.
+             }
+
+             if (!usedIndices.Contains(hardIndex))
+             {
+                 usedIndices.Add(hardIndex);
+                 hit = CheckAIHit(playerGridCells[hardIndex]); // Attack (hit) ship.
+                 // Add the spaces around the ship to list of spaces to attack next.
+                 if (nextIndices.Count() == 0 && hit)
+                 {
+                     nextIndices.Add(hardIndex - 10); // One space up.
+                     nextIndices.Add(hardIndex + 10); // One space down.
+                     nextIndices.Add(hardIndex - 1);  // One space left.
+                     nextIndices.Add(hardIndex + 1);  // One space right.
+                 }
+                 foundIndex = true;
+             }
+             else continue;*/
+        }
+        
+    }
+    //*********************************************************************************************************************************************
+    //*********************************************************************************************************************************************
     private void AIImpossible()
     {
         CheckAIHit(playerShipLocations[impossibleIndex]);
