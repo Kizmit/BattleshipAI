@@ -366,32 +366,6 @@ public class GameManager : MonoBehaviour, IComparer
                 
             }
 
-            /*if (nextIndices.Count() != 0)
-             {
-                 hardIndex = nextIndices[0];
-                 nextIndices.RemoveAt(0);   // Removes the first element in the list (since we've now used that element).
-             }
-
-             else
-             {
-                 hardIndex = RandomNumberGenerator(GRID_SIZE);    // No elements in nextIndices list, so choose random index.
-             }
-
-             if (!usedIndices.Contains(hardIndex))
-             {
-                 usedIndices.Add(hardIndex);
-                 hit = CheckAIHit(playerGridCells[hardIndex]); // Attack (hit) ship.
-                 // Add the spaces around the ship to list of spaces to attack next.
-                 if (nextIndices.Count() == 0 && hit)
-                 {
-                     nextIndices.Add(hardIndex - 10); // One space up.
-                     nextIndices.Add(hardIndex + 10); // One space down.
-                     nextIndices.Add(hardIndex - 1);  // One space left.
-                     nextIndices.Add(hardIndex + 1);  // One space right.
-                 }
-                 foundIndex = true;
-             }
-             else continue;*/
         }
         
     }
