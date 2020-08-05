@@ -51,7 +51,7 @@ public class InputManager : MonoBehaviour
                     draggingItem = true;
                     draggedObject = hit.transform.gameObject;
                     touchOffset = (Vector2)hit.transform.position - inputPosition;
-                    hit.transform.GetComponent<Tile>().PickUp();
+                    hit.transform.GetComponent<Ship>().PickUp();
                 }
                 else if (hit.transform != null && hit.transform.tag == "EnemyCell" && playerTurn && lockedIn) //monitors for clicks on enemy grid
                 {
@@ -101,6 +101,6 @@ public class InputManager : MonoBehaviour
     {
         draggingItem = false;
         draggedObject.transform.localScale = new Vector3(1, 1, 1);
-        draggedObject.GetComponent<Tile>().Drop();
+        draggedObject.GetComponent<Ship>().Drop();
     }
 }

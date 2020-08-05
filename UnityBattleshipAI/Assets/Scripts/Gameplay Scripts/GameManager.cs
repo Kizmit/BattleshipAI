@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour, IComparer
     
     private List<int> usedIndices; //list of indices checked by AI algorithm during game
     private List<int> nextIndices; //list of indices for AI algorithm to check next
-    private List<int> hitIndices; //list of indices that the AI got a hit at
        
     private List<GameObject> enemyShipLocations; //the gameObjects that the enemy ships are positioned over
     private List<GameObject> playerShipLocations; //the gameObjects that the player ships are positioned over
@@ -30,7 +29,7 @@ public class GameManager : MonoBehaviour, IComparer
 
     private GameObject shipPlacementWarningText;
 
-    private bool easy, medium, hard, impossible; //difficulties
+    private bool easy, medium, impossible; //difficulties
     private int totalAIHits, totalPlayerHits, impossibleIndex; //game control
     private bool gameRunning; //game control
     
@@ -39,10 +38,9 @@ public class GameManager : MonoBehaviour, IComparer
         /*Set difficulties based on menu choice*/
         easy = NewGameMenu.easy;
         medium = NewGameMenu.medium;
-        hard = NewGameMenu.hard;
         impossible = NewGameMenu.impossible;
 
-        if(!easy && !medium && !hard && !impossible) easy = true; //set a default difficulty if not selected in menu
+        if(!easy && !medium && !impossible) medium = true; //set a default difficulty if not selected in menu
         
         /*Initialize shipLocation lists*/
         playerShipLocations = new List<GameObject>();
@@ -54,7 +52,6 @@ public class GameManager : MonoBehaviour, IComparer
         
         usedIndices = new List<int>();
         nextIndices = new List<int>();
-        hitIndices = new List<int>();
         
         /*Add all grid objects to an array and sort them by their positions*/
         SetCellArray();
@@ -89,10 +86,6 @@ public class GameManager : MonoBehaviour, IComparer
                 else if(medium)
                 {
                     AIMedium();
-                }
-                else if(hard)
-                {
-                    AIHard();
                 }
                 else if(impossible)
                 {
@@ -299,11 +292,6 @@ public class GameManager : MonoBehaviour, IComparer
         }
     }
 
-    private void AIHard() //work in progress
-    {
-       
-    }
-
     private void AIImpossible()
     {
         CheckAIHit(playerShipLocations[impossibleIndex]);
@@ -359,7 +347,7 @@ public class GameManager : MonoBehaviour, IComparer
 
         for (int i = 0; i < ships.Length; i++)
         {
-            touchingTiles.AddRange(ships[i].GetComponent<Tile>().GetShipCoordinates());
+            touchingTiles.AddRange(ships[i].GetComponent<Ship>().GetShipCoordinates());
         }
         foreach(Transform obj in touchingTiles)
         {
