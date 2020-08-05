@@ -19,7 +19,8 @@ public class GameManager : MonoBehaviour, IComparer
     private int[] shipSizes;
     
     private List<int> usedIndices; //list of indices checked by AI algorithm during game
-    private List<int> nextIndices; //list of indices to check during next few turns; once list is exhausted, search randomly until a ship is hit
+    private List<int> nextIndices; //list of indices for AI algorithm to check next
+    private List<int> hitIndices; //list of indices that the AI got a hit at
        
     private List<GameObject> enemyShipLocations; //the gameObjects that the enemy ships are positioned over
     private List<GameObject> playerShipLocations; //the gameObjects that the player ships are positioned over
@@ -30,8 +31,8 @@ public class GameManager : MonoBehaviour, IComparer
     private GameObject shipPlacementWarningText;
 
     private bool easy, medium, hard, impossible; //difficulties
-    private int totalAIHits, totalPlayerHits, medIndex, hardIndex, impossibleIndex; //game control
-    private bool gameRunning, hit; //game control
+    private int totalAIHits, totalPlayerHits, impossibleIndex; //game control
+    private bool gameRunning; //game control
     
     void Awake()
     {
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour, IComparer
         
         usedIndices = new List<int>();
         nextIndices = new List<int>();
+        hitIndices = new List<int>();
         
         /*Add all grid objects to an array and sort them by their positions*/
         SetCellArray();
@@ -238,10 +240,9 @@ public class GameManager : MonoBehaviour, IComparer
             }
         }
     }
-/********************************** ALGORITHMS ***********************************************/
+
     public void AIPureRNG()
     {
-        /* Algorithm: Randomly searches the board for hits. */
         bool foundIndex = false;
         int index;
         while(!foundIndex)
@@ -259,14 +260,14 @@ public class GameManager : MonoBehaviour, IComparer
 
     private void AIMedium()
     {
-        /* Algorithm: Randomly searches the board until it hits a ship.
+         /* Algorithm: Randomly searches the board until it hits a ship.
          * When a ship is hit, the algorithm will check the spaces directly adjacent to the original hit. 
          * After, the algorithm continues randomly searching for another hit.
         */
 
-        //medIndex = RandomNumberGenerator(GRID_SIZE);
-        //hit = CheckAIHit(playerGridCells[medIndex]);
+        bool hit;
         bool foundIndex = false;
+        int medIndex;
         
         while (!foundIndex)
         {
@@ -274,7 +275,6 @@ public class GameManager : MonoBehaviour, IComparer
             {
                 medIndex = nextIndices[0];
                 nextIndices.RemoveAt(0);   // Removes the first element in the list (since we've now used that element).
-
             }
             else
             {
@@ -299,37 +299,16 @@ public class GameManager : MonoBehaviour, IComparer
         }
     }
 
-    private void AIHard()   // May not implement.
+    private void AIHard() //work in progress
     {
-        /* Algorithm: Starts at index 0 and searches every other space of the board (like only checking 
-         * the black spaces of a checkerboard) until a ship is hit.
-         * When a ship is hit, the algorithm will check the spaces directly adjacent to the original hit. 
-         * After, the algorithm continues searching every other space (from where it left off) until
-         * another ship is hit.
-        */
-
-        hardIndex = 0;
-        hit = CheckAIHit(playerGridCells[hardIndex]);
-        
-        if (hit)
-        {
-            // INSERT MediumAI ALGORITHM WITH ADJUSTMENTS
-        }
-        else
-        {
-            hardIndex += 2;
-        }
-        
+       
     }
 
     private void AIImpossible()
     {
-        /* Algorithm: The enemyAI already knows every location of the player's ships and gets a hit every turn. */
         CheckAIHit(playerShipLocations[impossibleIndex]);
         impossibleIndex++;
     }
-
-/*********************************************************************************************/
 
     private int RandomNumberGenerator(int bound) //random number generator for placing ships
     {
@@ -360,13 +339,13 @@ public class GameManager : MonoBehaviour, IComparer
         if(playerShipLocations.Contains(cell.gameObject)) //hit
         {
             cell.GetComponent<GridChanges>().ChangeSpriteRed();
-            totalAIHits++;
             GetComponent<InputManager>().SetPlayerTurn();
+            totalAIHits++;
             return true;
         } 
         else //miss
         {
-            cell.GetComponent<GridChanges>().ChangeSpriteWhite();
+            cell.GetComponent<GridChanges>().ChangeSpriteWhite(); 
             GetComponent<InputManager>().SetPlayerTurn();
             return false;
         }
@@ -413,17 +392,5 @@ public class GameManager : MonoBehaviour, IComparer
             gameRunning = true;
 
         }
-    }
-
-    // Takes the original index and newIndex and checks if they are in the same row.
-    public bool inBoundsRow(int i, int ni)
-    {
-        return false;
-    }
-
-    // Takes the original index and newIndex and checks if they are in the same column.
-    public bool inBoundsCol(int i, int ni)
-    {
-        return false;
     }
 }
