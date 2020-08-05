@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using System.Linq;
 
 //This script manages the enemy AI behavior
 public class GameManager : MonoBehaviour, IComparer
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour, IComparer
     private int[] shipSizes;
     
     private List<int> usedIndices; //list of indices checked by AI algorithm during game
+    private List<int> nextIndices; //list of indices for AI algorithm to check next
+    private List<int> hitIndices; //list of indices that the AI got a hit at
        
     private List<GameObject> enemyShipLocations; //the gameObjects that the enemy ships are positioned over
     private List<GameObject> playerShipLocations; //the gameObjects that the player ships are positioned over
@@ -50,6 +53,8 @@ public class GameManager : MonoBehaviour, IComparer
         shipSizes = new int[]{FRIGATE_HOLES, LARGE_CARRIER_HOLES, SUB_HOLES, CRUISER_HOLES, CARRIER_HOLES};
         
         usedIndices = new List<int>();
+        nextIndices = new List<int>();
+        hitIndices = new List<int>();
         
         /*Add all grid objects to an array and sort them by their positions*/
         SetCellArray();
@@ -255,14 +260,48 @@ public class GameManager : MonoBehaviour, IComparer
 
     private void AIMedium()
     {
-        int index;
-        index = RandomNumberGenerator(GRID_SIZE);
-        CheckAIHit(playerGridCells[index]);
+         /* Algorithm: Randomly searches the board until it hits a ship.
+         * When a ship is hit, the algorithm will check the spaces directly adjacent to the original hit. 
+         * After, the algorithm continues randomly searching for another hit.
+        */
+
+        bool hit;
+        bool foundIndex = false;
+        int medIndex;
+        
+        while (!foundIndex)
+        {
+            if (nextIndices.Count() != 0)
+            {
+                medIndex = nextIndices[0];
+                nextIndices.RemoveAt(0);   // Removes the first element in the list (since we've now used that element).
+            }
+            else
+            {
+                medIndex = RandomNumberGenerator(GRID_SIZE);    // No elements in nextIndices list, so choose random index.
+            }
+        
+            if (!usedIndices.Contains(medIndex))
+            {
+                usedIndices.Add(medIndex);
+                hit = CheckAIHit(playerGridCells[medIndex]); // Attack (hit) ship.
+                // Add the spaces around the ship to list of spaces to attack next.
+                if(nextIndices.Count() == 0 && hit)
+                {
+                    nextIndices.Add(medIndex - 10); // One space up.
+                    nextIndices.Add(medIndex + 10); // One space down.
+                    nextIndices.Add(medIndex - 1);  // One space left.
+                    nextIndices.Add(medIndex + 1);  // One space right.
+                }
+                foundIndex = true;
+            }
+            else continue;
+        }
     }
 
-    private void AIHard()
+    private void AIHard() //work in progress
     {
-
+       
     }
 
     private void AIImpossible()
@@ -295,18 +334,21 @@ public class GameManager : MonoBehaviour, IComparer
         GetComponent<InputManager>().SetPlayerTurn();
     }
 
-    public void CheckAIHit(GameObject cell)
+    public bool CheckAIHit(GameObject cell)
     {
         if(playerShipLocations.Contains(cell.gameObject)) //hit
         {
             cell.GetComponent<GridChanges>().ChangeSpriteRed();
+            GetComponent<InputManager>().SetPlayerTurn();
             totalAIHits++;
+            return true;
         } 
         else //miss
         {
             cell.GetComponent<GridChanges>().ChangeSpriteWhite(); 
+            GetComponent<InputManager>().SetPlayerTurn();
+            return false;
         }
-        GetComponent<InputManager>().SetPlayerTurn();
     }
 
     public void SetCoordinatesOfShip()
