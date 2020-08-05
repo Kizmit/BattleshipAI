@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Tile : MonoBehaviour
+public class Ship : MonoBehaviour
 {
     private Vector2 startingPosition;
     private List<Transform> touchingTiles;

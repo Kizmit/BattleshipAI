@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class NewGameMenu : MonoBehaviour
 {
-  public static bool easy, medium, hard, impossible;
+  public static bool easy, medium, impossible;
 
   public void NewGame() //New Game button
   {
@@ -16,7 +16,6 @@ public class NewGameMenu : MonoBehaviour
     Debug.Log("SetEasy");
     easy = true;
     medium = false;
-    hard = false;
     impossible = false;
   }
   public void SetMedium()
@@ -24,25 +23,13 @@ public class NewGameMenu : MonoBehaviour
     Debug.Log("SetMedium");
     easy = false;
     medium = true;
-    hard = false;
     impossible = false;
   }
-
-  public void SetHard()
-  {
-    Debug.Log("SetHard");
-    easy = false;
-    medium = false;
-    hard = true;
-    impossible = false;
-  }
-
   public void SetImpossible()
   {
     Debug.Log("SetImpossible");
     easy = false;
     medium = false;
-    hard = false;
     impossible = true;
   }
 }
