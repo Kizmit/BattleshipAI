@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour, IComparer
         shipSizes = new int[]{FRIGATE_HOLES, LARGE_CARRIER_HOLES, SUB_HOLES, CRUISER_HOLES, CARRIER_HOLES};
         
         usedIndices = new List<int>();
+        nextIndices = new List<int>();
         
         /*Add all grid objects to an array and sort them by their positions*/
         SetCellArray();
@@ -263,10 +264,10 @@ public class GameManager : MonoBehaviour, IComparer
          * After, the algorithm continues randomly searching for another hit.
         */
 
-        medIndex = RandomNumberGenerator(GRID_SIZE);
-        hit = CheckAIHit(playerGridCells[medIndex]);
+        //medIndex = RandomNumberGenerator(GRID_SIZE);
+        //hit = CheckAIHit(playerGridCells[medIndex]);
         bool foundIndex = false;
-
+        
         while (!foundIndex)
         {
             if (nextIndices.Count() != 0)
@@ -283,11 +284,10 @@ public class GameManager : MonoBehaviour, IComparer
             if (!usedIndices.Contains(medIndex))
             {
                 usedIndices.Add(medIndex);
-
-                if (playerShipLocations.Contains(playerGridCells[medIndex])) // If index contains a ship... 
+                hit = CheckAIHit(playerGridCells[medIndex]); // Attack (hit) ship.
+                // Add the spaces around the ship to list of spaces to attack next.
+                if(nextIndices.Count() == 0 && hit)
                 {
-                    hit = CheckAIHit(playerGridCells[medIndex]); // Attack (hit) ship.
-                    // Add the spaces around the ship to list of spaces to attack next.
                     nextIndices.Add(medIndex - 10); // One space up.
                     nextIndices.Add(medIndex + 10); // One space down.
                     nextIndices.Add(medIndex - 1);  // One space left.
