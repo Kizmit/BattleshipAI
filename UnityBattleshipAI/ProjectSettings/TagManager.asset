@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tile
+  - Cell
+  - OutOfBounds
+  - EnemyCell
+  - ConfirmButton
+  - WarningMessage
   layers:
   - Default
   - TransparentFX
@@ -13,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Grid
+  - Pieces
+  - OutOfBoundsCollider
   - 
   - 
   - 
@@ -40,4 +46,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: GridBoard
+    uniqueID: 1020142013
+    locked: 0
+  - name: Pieces
+    uniqueID: 1025287979
     locked: 0
